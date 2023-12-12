@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="369.0" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.AuthController">
+   <children>
+      <AnchorPane fx:id="login_form" prefHeight="576.0" prefWidth="370.0" styleClass="white-bg" stylesheets="@../../../Styles/style.css">
+         <children>
+            <TextField fx:id="login_cin" layoutX="71.0" layoutY="208.0" prefHeight="30.0" prefWidth="228.0" promptText="CIN" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <FontAwesomeIconView glyphName="USER" layoutX="156.0" layoutY="120.0" size="80">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.15477792732166892">
+                           <color>
+                              <Color red="0.03529411926865578" green="0.03529411926865578" blue="0.4745098054409027" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9577192003413978">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </FontAwesomeIconView>
+            <Label alignment="CENTER" layoutX="63.0" layoutY="153.0" text="CONNEXION À VOTRE COMPTE" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="login_passwordShowen" layoutX="71.0" layoutY="273.0" prefHeight="30.0" prefWidth="228.0" promptText="Mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" visible="false" />
+            <PasswordField fx:id="login_password" layoutX="71.0" layoutY="273.0" prefHeight="30.0" prefWidth="228.0" promptText="Mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <CheckBox fx:id="login_showPassword" layoutX="68.0" layoutY="324.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="20.0" prefWidth="145.0" text="Afficher Mot de passe" />
+            <Label layoutX="63.0" layoutY="532.0" text="Vous n'avez pas de compte ? " />
+            <Button fx:id="login_newAccount" layoutX="215.0" layoutY="528.0" mnemonicParsing="false" onAction="#switchForm" style="-fx-background-color: Transparent;" text="Cree compte" textFill="#1500ff" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="login_btn" layoutX="89.0" layoutY="386.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="42.0" prefWidth="198.0" styleClass="btn" stylesheets="@../../../Styles/style.css" text="Connextion">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.35789474844932556" green="0.29559454321861267" blue="0.29559454321861267" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <Hyperlink fx:id="login_resetPassword" layoutX="86.0" layoutY="497.0" onAction="#switchForm" text="Vous avez oubliez le mot de passe ?" underline="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signup_form" layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="370.0" styleClass="white-bg" stylesheets="@../../../Styles/style.css" visible="false">
+         <children>
+            <TextField fx:id="signup_CIN" layoutX="71.0" layoutY="207.0" prefHeight="30.0" prefWidth="228.0" promptText="CIN" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <FontAwesomeIconView glyphName="USER_PLUS" layoutX="146.0" layoutY="103.0" size="80">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.15477792732166892">
+                           <color>
+                              <Color red="0.03529411926865578" green="0.03529411926865578" blue="0.4745098054409027" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9577192003413978">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </FontAwesomeIconView>
+            <Label alignment="CENTER" layoutX="108.0" layoutY="123.0" text="CRÉER UN COMPTE" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="signup_password" layoutX="71.0" layoutY="342.0" prefHeight="30.0" prefWidth="228.0" promptText="Mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <Label layoutX="81.0" layoutY="572.0" text="Vous avez un compte ? " />
+            <Button fx:id="signup_login" layoutX="203.0" layoutY="568.0" mnemonicParsing="false" onAction="#switchForm" style="-fx-background-color: Transparent;" text="Se connecter" textFill="#1500ff" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="signup_btn" layoutX="93.0" layoutY="527.0" mnemonicParsing="false" onAction="#register" prefHeight="30.0" prefWidth="198.0" styleClass="btn" stylesheets="@../../../Styles/style.css" text="S'inscrir">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.35789474844932556" green="0.29559454321861267" blue="0.29559454321861267" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <TextField fx:id="signup_lastName" layoutX="70.0" layoutY="162.0" prefHeight="30.0" prefWidth="108.0" promptText="Nom" styleClass="textfield" />
+            <TextField fx:id="signup_firstName" layoutX="192.0" layoutY="162.0" prefHeight="30.0" prefWidth="108.0" promptText="Prenom" styleClass="textfield" />
+            <TextField fx:id="signup_email" layoutX="71.0" layoutY="252.0" prefHeight="30.0" prefWidth="228.0" promptText="Email" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <DatePicker fx:id="signup_DOB" layoutX="71.0" layoutY="297.0" prefHeight="30.0" prefWidth="228.0" promptText="Date de naissance" styleClass="textfield" />
+            <PasswordField fx:id="signup_confirmPassword" layoutX="71.0" layoutY="387.0" prefHeight="30.0" prefWidth="228.0" promptText="Confirmer le mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <ComboBox fx:id="signup_question" layoutX="71.0" layoutY="432.0" prefHeight="30.0" prefWidth="228.0" promptText="Question pour verification" />
+            <TextField fx:id="signup_answer" layoutX="71.0" layoutY="477.0" prefHeight="30.0" prefWidth="228.0" promptText="Reponse" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="forgot_form" layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="370.0" styleClass="white-bg" stylesheets="@../../../Styles/style.css" visible="false">
+         <children>
+            <TextField fx:id="resetpass_cin" layoutX="71.0" layoutY="228.0" prefHeight="30.0" prefWidth="228.0" promptText="CIN" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <FontAwesomeIconView glyphName="LOCK" layoutX="159.0" layoutY="154.0" size="80">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.15477792732166892">
+                           <color>
+                              <Color red="0.03529411926865578" green="0.03529411926865578" blue="0.4745098054409027" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9577192003413978">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </FontAwesomeIconView>
+            <Label alignment="CENTER" layoutX="85.0" layoutY="179.0" text="Réinitialiser Mot De Passe" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="572.0" text="Vous avez un compte ? " />
+            <Button fx:id="resetpass_login" layoutX="203.0" layoutY="568.0" mnemonicParsing="false" onAction="#switchForm" style="-fx-background-color: Transparent;" text="Se connecter" textFill="#1500ff" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="resetpass_continue" layoutX="97.0" layoutY="422.0" mnemonicParsing="false" onAction="#forgotPassword" prefHeight="42.0" prefWidth="188.0" styleClass="btn" stylesheets="@../../../Styles/style.css" text="Continue">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.35789474844932556" green="0.29559454321861267" blue="0.29559454321861267" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <ComboBox fx:id="resetpass_question" layoutX="71.0" layoutY="295.0" prefHeight="30.0" prefWidth="228.0" promptText="Question de verification" />
+            <TextField fx:id="resetpass_answer" layoutX="71.0" layoutY="358.0" prefHeight="30.0" prefWidth="228.0" promptText="Reponse" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="changePass_form" layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="370.0" styleClass="white-bg" stylesheets="@../../../Styles/style.css" visible="false">
+         <children>
+            <FontAwesomeIconView glyphName="LOCK" layoutX="165.0" layoutY="154.0" size="80">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.15477792732166892">
+                           <color>
+                              <Color red="0.03529411926865578" green="0.03529411926865578" blue="0.4745098054409027" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9577192003413978">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.8333333134651184" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </FontAwesomeIconView>
+            <Label alignment="CENTER" layoutX="91.0" layoutY="182.0" text="Réinitialiser Mot De Passe" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="resetpass_btn" layoutX="97.0" layoutY="406.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="42.0" prefWidth="188.0" styleClass="btn" stylesheets="@../../../Styles/style.css" text="Réinitialiser ">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.35789474844932556" green="0.29559454321861267" blue="0.29559454321861267" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+            <PasswordField fx:id="resetpass_newPassword" layoutX="71.0" layoutY="251.0" prefHeight="42.0" prefWidth="228.0" promptText="Nouveau mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+            <PasswordField fx:id="resetpass_confirmPassword" layoutX="71.0" layoutY="319.0" prefHeight="42.0" prefWidth="228.0" promptText="Confirmer mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

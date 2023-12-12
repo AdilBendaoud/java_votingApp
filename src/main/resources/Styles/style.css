@@ -1,0 +1,29 @@
+.rounded-corners{
+    -fx-border-radius: 10 0 0 10;
+    -fx-background-radius: 10 0 0 10;
+}
+
+.white-bg{
+    -fx-background-color : #fff;
+}
+
+.btn{
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
+    -fx-cursor : hand;
+    -fx-text-fill : #fff;
+    -fx-font-size : 14px;
+    -fx-font-family: Arial;
+}
+.btn:hover{
+    -fx-background-color: linear-gradient(to bottom right, #0909ec, #00d4ff);
+    -fx-font-weight : bold;
+}
+
+.textfield{
+    -fx-border-color: #000;
+    -fx-border-width: .5px;
+}
+.textfield:focused{
+    -fx-border-color: linear-gradient(to bottom right, #090979, #00d4ff);
+    -fx-border-width: .8px;
+}
