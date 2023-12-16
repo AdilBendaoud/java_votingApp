@@ -1,0 +1,39 @@
+.nav_bar{
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
+}
+
+.nav_button{
+    -fx-background-color : transparent;
+    -fx-border-color : #fff;
+    -fx-border-width : 1px;
+    -fx-border-radius : 5px;
+    -fx-text-fill : #fff;
+    -fx-font-family : Arial;
+    -fx-cursor : hand;
+    -fx-font-size : 14px;
+}
+
+.nav_button:hover{
+    -fx-background-color : #fff;
+    -fx-text-fill : #000;
+}
+.nav_button_active{
+    -fx-background-color : #fff;
+    -fx-text-fill : #000;
+    -fx-border-width : 1px;
+    -fx-border-radius : 5px;
+    -fx-font-family : Arial;
+    -fx-cursor : hand;
+    -fx-font-size : 14px;
+}
+.icon_active{
+    -fx-fill: black;
+}
+
+.nav_button .icon {
+    -fx-fill: inherit;
+}
+
+.nav_button:hover .icon {
+    -fx-fill: black;
+}

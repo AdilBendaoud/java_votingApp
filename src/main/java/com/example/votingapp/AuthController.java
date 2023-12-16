@@ -6,9 +6,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -105,9 +109,9 @@ public class AuthController implements Initializable {
     private ComboBox<String> signup_question;
 
     AlertMessage alertMessage;
+    User user = null;
    @FXML
     protected void login() throws SQLException {
-        User user = null;
         alertMessage = new AlertMessage();
         if(login_cin.getText().isEmpty() || login_password.getText().isEmpty()){
             alertMessage.errorMessage("vous devez remplir tous les champs !!");
@@ -119,7 +123,7 @@ public class AuthController implements Initializable {
             try {
                 user = User.getUserByCode(login_cin.getText());
                 if (user != null && login_password.getText().equals(user.getPassword())) {
-                    System.out.println("nice");
+                    openMainScene();
                 } else {
                     alertMessage.errorMessage("user or password wrong");
                 }
@@ -287,18 +291,22 @@ public class AuthController implements Initializable {
     }
 
 
-    /*private void openMainScene() {
+    private void openMainScene() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("election-management-view.fxml"));
-            Parent root = loader.load();
+            if(user.isAdmin()){
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("election-management-view.fxml"));
+                Parent root = loader.load();
+                ElectionManagementController mainController = loader.getController();
+                Stage stage = (Stage) login_btn.getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.setTitle("Page des elections");
+                stage.show();
+            }else{
+                System.out.println("not admin");
+            }
 
-            ElectionManagementController mainController = loader.getController();
-
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }*/
+    }
 }
