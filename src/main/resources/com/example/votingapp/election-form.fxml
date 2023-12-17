@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="350.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ElectionFormController">
+   <children>
+      <AnchorPane layoutX="13.0" layoutY="46.0" prefHeight="383.0" prefWidth="324.0" stylesheets="@../../../Styles/election.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white_bg" />
+            <String fx:value="radius" />
+         </styleClass>
+         <children>
+            <Label layoutX="17.0" layoutY="81.0" prefHeight="54.0" prefWidth="112.0" text="Nom d'election :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="151.0" prefHeight="54.0" prefWidth="89.0" text="Date debut:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="210.0" prefHeight="54.0" prefWidth="56.0" text="Date fin :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="endInput" layoutX="122.0" layoutY="224.0" prefHeight="30.0" prefWidth="180.0" />
+            <DatePicker fx:id="startInput" layoutX="123.0" layoutY="164.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button fx:id="saveBtn" layoutX="52.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #1ea076; -fx-text-fill: #FFF; -fx-cursor: hand;" text="Enregistrer" visible="false">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="18" />
+               </graphic>
+            </Button>
+            <Button fx:id="cancelBtn" layoutX="178.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-cursor: hand;" text="Annuler" visible="false">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
+               </graphic>
+            </Button>
+            <TextField fx:id="nameInput" layoutX="123.0" layoutY="95.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button fx:id="addBtn" layoutX="102.0" layoutY="304.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="38.0" prefWidth="139.0" stylesheets="@../../../Styles/election.css" text="Ajouter">
+               <styleClass>
+                  <String fx:value="action-button" />
+                  <String fx:value="add-button" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="title" layoutX="113.0" layoutY="11.0" text="Modifier l'election">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

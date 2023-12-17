@@ -1,4 +1,4 @@
-package Model;
+package com.example.votingapp.Model;
 
 import Util.DBconnection;
 
@@ -108,7 +108,6 @@ public class User {
         DBconnection DBconnection = new DBconnection();
         LocalDate today = LocalDate.now();
         try{
-
             DBconnection.openConnection();
             String query = "INSERT INTO Users (CIN, last_name, first_name, email, password, date_of_birth, question, answer, isAdmin, creation_date)\n" +
                     "VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?, ?);";

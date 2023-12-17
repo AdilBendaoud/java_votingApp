@@ -17,6 +17,7 @@
     -fx-background-color : #fff;
     -fx-text-fill : #000;
 }
+
 .nav_button_active{
     -fx-background-color : #fff;
     -fx-text-fill : #000;
@@ -26,6 +27,7 @@
     -fx-cursor : hand;
     -fx-font-size : 14px;
 }
+
 .icon_active{
     -fx-fill: black;
 }
@@ -36,4 +38,69 @@
 
 .nav_button:hover .icon {
     -fx-fill: black;
+}
+
+.radius{
+    -fx-background-radius: 5px;
+}
+
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+
+.white_bg{
+    -fx-background-color : #fff;
+}
+
+.table-view{
+    -fx-alignment: CENTER;
+    -fx-padding: 0;
+    -fx-border-radius: 8px;
+    -fx-border-color : linear-gradient(to bottom right, #090979, #00d4ff);
+}
+.table-view .column-header-background{
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 8px 8px 0 0 ;
+}
+.table-view .column-header, .filter{
+    -fx-size: 40px;
+    -fx-background-color: transparent;
+}
+.table-view .column-header .label{
+    -fx-font-family: Arial;
+    -fx-text-fill: #fff;
+}
+
+.action-button {
+    -fx-background-color: #4CAF50; /* Green background color */
+    -fx-text-fill: white;         /* White text color */
+    -fx-font-size: 14px;          /* Font size */
+    -fx-padding: 5px 10px;         /* Padding */
+    -fx-border-radius: 5px;        /* Border radius */
+    -fx-cursor : hand;
+}
+.action-button:hover{
+    -fx-background-color: #2a622d;
+}
+
+/* Style for the edit button */
+.edit-button {
+    -fx-background-color: #2196F3; /* Blue background color */
+}
+
+.edit-button:hover{
+    -fx-background-color: #1666a6;
+}
+
+/* Style for the delete button */
+.delete-button {
+    -fx-background-color: #F44336; /* Red background color */
+}
+.delete-button:hover{
+    -fx-background-color: #a72d25;
+}
+
+.add-button{
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
 }

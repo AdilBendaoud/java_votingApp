@@ -4,7 +4,8 @@ module com.example.votingapp {
     requires java.sql;
     requires org.postgresql.jdbc;
 
-
+    opens com.example.votingapp.Model to javafx.base;
     opens com.example.votingapp to javafx.fxml;
     exports com.example.votingapp;
+    exports com.example.votingapp.Model;
 }
