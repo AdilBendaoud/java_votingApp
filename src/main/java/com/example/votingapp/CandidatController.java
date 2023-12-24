@@ -3,17 +3,22 @@ package com.example.votingapp;
 import com.example.votingapp.Model.Candidate;
 import Util.AlertMessage;
 import Util.DBconnection;
+import com.example.votingapp.Model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -37,6 +42,9 @@ public class CandidatController {
     private TableColumn<Candidate, String> candidat_col_genrer;
 
     @FXML
+    private Button candidatAddButton;
+
+    @FXML
     private TableColumn<Candidate, Integer> candidat_col_id;
 
     @FXML
@@ -55,6 +63,13 @@ public class CandidatController {
     private TextField searchInput;
 
     @FXML
+    private Label username_label;
+
+    private User user;
+    public void setUser(User user){this.user = user;}
+    public User getUser(){return user;}
+
+    @FXML
     void addCandidat() {
         showDialog(null, (Stage) candidatTable.getScene().getWindow(), false);
     }
@@ -67,6 +82,8 @@ public class CandidatController {
             e.printStackTrace();
         }
     }
+
+    public void initData(String username) {username_label.setText(username);}
 
     public ObservableList<Candidate> getCandidatesData(String word) throws SQLException {
         DBconnection connection = new DBconnection();
@@ -99,6 +116,31 @@ public class CandidatController {
         return listData;
     }
 
+    public void goToElection() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("election-management-view.fxml"));
+        Parent root = loader.load();
+        ElectionManagementController mainController = loader.getController();
+        mainController.initData(user.getFirst_name() + " " + user.getLast_name());
+        mainController.setUser(user);
+        Stage stage = getStage(root);
+        stage.show();
+    }
+
+    private Stage getStage(Parent root) {
+        Stage stage = (Stage) candidatAddButton.getScene().getWindow();
+        Screen screen = Screen.getPrimary();
+
+        Rectangle2D bounds = screen.getVisualBounds();
+        double centerX = bounds.getMinX() + (bounds.getWidth() - stage.getWidth()) / 2.0;
+        double centerY = bounds.getMinY() + (bounds.getHeight() - stage.getHeight()) / 2.0;
+
+        stage.setX(centerX-400);
+        stage.setY(centerY+20);
+        stage.setScene(new Scene(root));
+        stage.setTitle("Page des elections");
+        return stage;
+    }
+
     public void candidatTableDisplay(String word) throws SQLException {
         ObservableList<Candidate> candidates = getCandidatesData(word);
         candidat_col_id.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -109,6 +151,30 @@ public class CandidatController {
         candidat_col_genrer.setCellValueFactory(new PropertyValueFactory<>("genre"));
         candidat_col_date_naiss.setCellValueFactory(new PropertyValueFactory<>("date_naissance"));
 
+        candidat_col_photo.setCellFactory(param -> new TableCell<>() {
+            private final ImageView imageView = new ImageView();
+            {
+                imageView.setFitWidth(80);
+                imageView.setFitHeight(80);
+                imageView.setPreserveRatio(true);
+            }
+
+            @Override
+            protected void updateItem(String imagePath, boolean empty) {
+                super.updateItem(imagePath, empty);
+
+                if (empty || imagePath == null) {
+                    setGraphic(null);
+                } else {
+                    HBox hbxImg = new HBox();
+                    hbxImg.setAlignment(Pos.CENTER);
+                    Image image = new Image(imagePath);
+                    imageView.setImage(image);
+                    hbxImg.getChildren().add(imageView);
+                    setGraphic(hbxImg);
+                }
+            }
+        });
         candidat_col_actions.setCellFactory(param -> new TableCell<>() {
             private final Button editButton = new Button("Editer");
             private final Button deleteButton = new Button("Supprimer");

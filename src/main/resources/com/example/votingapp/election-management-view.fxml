@@ -52,7 +52,7 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" styleClass="icon_active" />
                            </graphic>
                         </Button>
-                        <Button layoutX="5.0" layoutY="228.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
+                        <Button layoutX="5.0" layoutY="228.0" mnemonicParsing="false" onAction="#goToCandidate" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" />
                            </graphic>

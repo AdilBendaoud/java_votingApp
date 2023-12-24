@@ -74,7 +74,7 @@ public class CandidatFormController {
         Prénom_Cand.setText(candidate.getPrenom());
         Pos_Cand.setText(candidate.getPosition());
         Datenaiss_Cand.setValue(candidate.getDate_naissance());
-        if ("H".equals(candidate.getGenre())) {
+        if ("M".equals(candidate.getGenre())) {
             H_Cand.setSelected(true);
         } else {
             F_Cand.setSelected(true);

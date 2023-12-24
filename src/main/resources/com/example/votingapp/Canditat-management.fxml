@@ -44,9 +44,9 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <Button layoutX="7.0" layoutY="224.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Elections">
+                  <Button layoutX="7.0" layoutY="224.0" mnemonicParsing="false" onAction="#goToElection" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Elections">
                      <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" styleClass="icon_active" text="" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" smooth="false" styleClass="icon" text="" />
                      </graphic>
                   </Button>
                   <Button layoutX="7.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button_active" stylesheets="@../../../Styles/election.css" text="Candidats">
@@ -65,8 +65,10 @@
                      </graphic>
                   </Button>
                   <Separator layoutX="6.0" layoutY="149.0" prefWidth="200.0" />
-                  <Button layoutX="7.0" layoutY="173.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs" />
-                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" layoutX="44.0" layoutY="200.0" size="18" styleClass="icon" text="" wrappingWidth="20.885690689086914" />
+                  <Button layoutX="7.0" layoutY="173.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" wrappingWidth="20.885690689086914" />
+                     </graphic></Button>
                </children>
             </AnchorPane>
          </left>

@@ -300,6 +300,7 @@ public class AuthController implements Initializable {
                 Parent root = loader.load();
                 ElectionManagementController mainController = loader.getController();
                 mainController.initData(user.getFirst_name() + " " + user.getLast_name());
+                mainController.setUser(user);
                 Stage stage = getStage(root);
                 stage.show();
             }else{
