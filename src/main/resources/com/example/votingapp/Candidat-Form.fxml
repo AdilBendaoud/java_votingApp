@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="573.0" prefWidth="350.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatFormController">
+   <children>
+      <AnchorPane layoutX="13.0" layoutY="42.0" prefHeight="491.0" prefWidth="324.0" stylesheets="@../../../Styles/election.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white_bg" />
+            <String fx:value="radius" />
+         </styleClass>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="16.0" layoutY="335.0" prefHeight="26.0" prefWidth="116.0" text="Genre ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="290.0" prefHeight="20.0" prefWidth="106.0" text="Date Naissance">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="Datenaiss_Cand" layoutX="133.0" layoutY="285.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button fx:id="saveBtn" layoutX="16.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="45.0" prefWidth="139.0" style="-fx-background-color: #1ea076; -fx-text-fill: #FFF; -fx-cursor: hand;" text="Enregistrer" visible="false">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="18" />
+               </graphic>
+            </Button>
+            <Button fx:id="cancelBtn" layoutX="172.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-cursor: hand;" text="Annuler" visible="false">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
+               </graphic>
+            </Button>
+            <TextField fx:id="nom_Cand" layoutX="133.0" layoutY="238.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button fx:id="addBtn" layoutX="92.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="46.0" prefWidth="139.0" stylesheets="@../../../Styles/election.css" text="Ajouter">
+               <styleClass>
+                  <String fx:value="action-button" />
+                  <String fx:value="add-button" />
+               </styleClass>
+            </Button>
+            <Label alignment="CENTER" layoutX="12.0" layoutY="200.0" prefHeight="18.0" prefWidth="122.0" text="Prénom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="12.0" layoutY="244.0" prefHeight="18.0" prefWidth="122.0" text="Nom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Prénom_Cand" layoutX="133.0" layoutY="194.0" prefHeight="30.0" prefWidth="180.0" />
+            <RadioButton fx:id="H_Cand" layoutX="142.0" layoutY="339.0" mnemonicParsing="false" text="M">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Genre" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="F_Cand" layoutX="223.0" layoutY="339.0" mnemonicParsing="false" text="F" toggleGroup="$Genre" />
+            <Label alignment="CENTER" layoutX="17.0" layoutY="380.0" prefHeight="18.0" prefWidth="116.0" text="Position">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Pos_Cand" layoutX="133.0" layoutY="374.0" prefHeight="30.0" prefWidth="180.0" />
+            <AnchorPane layoutX="109.0" layoutY="22.0" prefHeight="146.0" prefWidth="106.0">
+               <styleClass>
+                  <String fx:value="white_bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <ImageView fx:id="Image_Cand" fitHeight="121.0" fitWidth="106.0" layoutX="-1.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="importBtn" layoutX="109.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleImport" prefHeight="30.0" prefWidth="106.0" stylesheets="@../../../Styles/election.css" text="Importer">
+               <styleClass>
+                  <String fx:value="action-button" />
+                  <String fx:value="add-button" />
+               </styleClass>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="title" layoutX="113.0" layoutY="11.0" text="Ajouter Candidat">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

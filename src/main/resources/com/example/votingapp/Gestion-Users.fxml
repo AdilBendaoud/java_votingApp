@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.UsersManagementController">
+   <children>
+      <AnchorPane minHeight="600.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="79.0" layoutY="87.0" prefHeight="600.0" prefWidth="1130.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="40.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #090979;">
+                           <children>
+                              <Label layoutX="44.0" layoutY="11.0" prefHeight="20.0" prefWidth="130.0" text="Système de Vote" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label alignment="CENTER" layoutX="560.0" layoutY="11.0" minWidth="160.0" prefHeight="26.0" prefWidth="272.0" text="Gestion des Utilisateurs" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="298.0">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="563.0" prefWidth="210.0" styleClass="nav_bar" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="71.0" layoutY="101.0" size="100" />
+                        <Label fx:id="username_label" layoutX="54.0" layoutY="115.0" text="Adil Bendaoud" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="5.0" layoutY="231.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Elections">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" styleClass="icon_active" text="" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="7.0" layoutY="177.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button_active" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="USERS" size="18" styleClass="icon" text="" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="6.0" layoutY="336.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="506.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="18" styleClass="icon" />
+                           </graphic>
+                        </Button>
+                        <Separator layoutX="6.0" layoutY="149.0" prefWidth="200.0" />
+                        <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane layoutX="211.4" layoutY="40.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="10.0" layoutY="13.0" prefHeight="540.0" prefWidth="897.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.399999999999977" AnchorPane.rightAnchor="12.399999999999977" AnchorPane.topAnchor="12.799999999999955">
+                           <children>
+                              <TableView fx:id="UserTable" layoutX="16.0" layoutY="55.0" prefHeight="467.0" prefWidth="872.0" AnchorPane.bottomAnchor="17.600000000000023" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="9.600000000000023" AnchorPane.topAnchor="55.0">
+                                 <columns>
+                                    <TableColumn fx:id="User_col_cin" editable="false" prefWidth="102.39996147155762" text="CIN" />
+                                    <TableColumn fx:id="User_col_prenom" editable="false" prefWidth="129.60001373291016" text="Prénom" />
+                                    <TableColumn fx:id="User_col_nom" editable="false" minWidth="20.0" prefWidth="147.19998168945312" text="Nom" />
+                                    <TableColumn fx:id="User_col_email" editable="false" minWidth="20.0" prefWidth="165.60000610351562" text="Email" />
+                                    <TableColumn fx:id="User_col_Datebirth" editable="false" minWidth="20.0" prefWidth="158.39990234375" text="Date de Naissance" />
+                                    <TableColumn fx:id="User_col_actions" editable="false" minWidth="50.0" prefWidth="182.400146484375" sortable="false" text="Actions" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="202.0" promptText="Rechercher" AnchorPane.rightAnchor="10.200000000000017" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="radius" />
+                              <String fx:value="white_bg" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="468.0" prefWidth="350.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.UsersFormController">
+   <children>
+      <AnchorPane layoutX="19.0" layoutY="46.0" prefHeight="402.0" prefWidth="311.0" stylesheets="@../../../Styles/election.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white_bg" />
+            <String fx:value="radius" />
+         </styleClass>
+         <children>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="28.0" prefHeight="26.0" prefWidth="118.0" text="CIN">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="161.0" prefHeight="54.0" prefWidth="118.0" text=" Date Naissance">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="219.0" prefHeight="54.0" prefWidth="118.0" text="Email">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="birthInput" layoutX="124.0" layoutY="173.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button fx:id="saveBtn" layoutX="30.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: #1ea076; -fx-text-fill: #FFF; -fx-cursor: hand;" text="Enregistrer">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="18" />
+               </graphic>
+            </Button>
+            <Button fx:id="cancelBtn" layoutX="169.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-cursor: hand;" text="Annuler">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
+               </graphic>
+            </Button>
+            <TextField fx:id="CINInput" layoutX="124.0" layoutY="26.0" prefHeight="30.0" prefWidth="180.0" />
+            <Button fx:id="addBtn" layoutX="86.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="38.0" prefWidth="139.0" stylesheets="@../../../Styles/election.css" text="Ajouter" visible="false">
+               <styleClass>
+                  <String fx:value="action-button" />
+                  <String fx:value="add-button" />
+               </styleClass>
+            </Button>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="74.0" prefHeight="30.0" prefWidth="118.0" text="Prénom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="7.0" layoutY="125.0" prefHeight="26.0" prefWidth="118.0" text="Nom">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="prenomInput" layoutX="125.0" layoutY="74.0" prefHeight="30.0" prefWidth="180.0" />
+            <TextField fx:id="nomInput" layoutX="124.0" layoutY="123.0" prefHeight="30.0" prefWidth="180.0" />
+            <TextField fx:id="emailinput01" layoutX="124.0" layoutY="231.0" prefHeight="30.0" prefWidth="180.0" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="296.0" prefHeight="20.0" prefWidth="112.0" text="Rendre Admin">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="Yes_edit" layoutX="125.0" layoutY="297.0" mnemonicParsing="false" text="Yes" />
+            <RadioButton fx:id="non_edit" layoutX="193.0" layoutY="297.0" mnemonicParsing="false" text="Non" />
+         </children>
+      </AnchorPane>
+      <Label fx:id="title" alignment="CENTER" layoutY="11.0" prefHeight="26.0" prefWidth="350.0" text="Editer Utilisateur">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
