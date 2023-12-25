@@ -57,7 +57,7 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" />
                            </graphic>
                         </Button>
-                        <Button layoutX="5.0" layoutY="289.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
+                        <Button layoutX="5.0" layoutY="289.0" mnemonicParsing="false" onAction="#goToResults" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" />
                            </graphic>

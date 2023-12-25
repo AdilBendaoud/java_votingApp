@@ -19,6 +19,10 @@ public class Election {
         this.gagnant = gagnant;
     }
 
+    public Election(String nom_election){
+        this.nom_election = nom_election;
+    }
+
     public Election(){}
 
     public int getId() {
@@ -100,5 +104,10 @@ public class Election {
         }finally {
             connection.closeConnection();
         }
+    }
+
+    @Override
+    public String toString() {
+        return nom_election ;
     }
 }

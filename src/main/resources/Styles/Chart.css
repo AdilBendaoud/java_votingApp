@@ -1,0 +1,5 @@
+.chart{
+    -fx-font-size: 16;
+    -fx-text-fill: white;
+    -fx-legend-visible: false;
+}
