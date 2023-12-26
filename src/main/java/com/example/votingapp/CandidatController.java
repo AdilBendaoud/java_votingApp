@@ -185,7 +185,6 @@ public class CandidatController {
                 buttons.setAlignment(Pos.CENTER);
                 editButton.getStyleClass().addAll("action-button", "edit-button");
                 deleteButton.getStyleClass().addAll("action-button", "delete-button");
-
                 editButton.setOnAction(event -> {
                     Candidate candidate = getTableView().getItems().get(getIndex());
                     showDialog(candidate, (Stage) candidatTable.getScene().getWindow(), true);

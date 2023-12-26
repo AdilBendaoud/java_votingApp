@@ -21,7 +21,7 @@
                <top>
                   <AnchorPane prefHeight="40.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #090979;">
+                        <AnchorPane prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: #090979;">
                            <children>
                               <Label layoutX="44.0" layoutY="11.0" prefHeight="20.0" prefWidth="130.0" text="Système de Vote" textFill="WHITE">
                                  <font>
@@ -47,19 +47,9 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Button layoutX="5.0" layoutY="174.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button_active" stylesheets="@../../../Styles/election.css" text="Elections">
+                        <Button layoutX="5.0" layoutY="240.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button_active" stylesheets="@../../../Styles/election.css" text="Elections">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" styleClass="icon_active" />
-                           </graphic>
-                        </Button>
-                        <Button layoutX="5.0" layoutY="228.0" mnemonicParsing="false" onAction="#goToCandidate" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" />
-                           </graphic>
-                        </Button>
-                        <Button layoutX="5.0" layoutY="289.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
-                           <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" />
                            </graphic>
                         </Button>
                         <Button layoutX="5.0" layoutY="506.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0">
@@ -68,6 +58,26 @@
                            </graphic>
                         </Button>
                         <Separator layoutX="6.0" layoutY="149.0" prefWidth="200.0" />
+                        <Button layoutX="5.0" layoutY="292.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="345.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" text="" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="187.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" wrappingWidth="20.885690689086914" />
+                           </graphic>
+                        </Button>
+                        <Button layoutX="5.0" layoutY="391.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Profil">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="18" styleClass="icon" text="" />
+                           </graphic>
+                        </Button>
                      </children>
                   </AnchorPane>
                </left>
@@ -83,7 +93,7 @@
                                     <TableColumn fx:id="election_col_date_debut" editable="false" minWidth="20.0" prefWidth="147.19998168945312" text="Date Debut" />
                                     <TableColumn fx:id="election_col_date_fin" editable="false" minWidth="20.0" prefWidth="165.60000610351562" text="Date Fin" />
                                     <TableColumn fx:id="election_col_gagnant" editable="false" minWidth="20.0" prefWidth="115.19989013671875" text="Gagnant" />
-                                    <TableColumn fx:id="election_col_actions" editable="false" minWidth="50.0" prefWidth="270.40020751953125" sortable="false" text="Actions" />
+                                    <TableColumn fx:id="election_col_actions" editable="false" minWidth="50.0" prefWidth="199.20013427734375" sortable="false" text="Actions" />
                                  </columns>
                                  <columnResizePolicy>
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

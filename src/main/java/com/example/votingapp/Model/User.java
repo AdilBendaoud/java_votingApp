@@ -1,6 +1,8 @@
 package com.example.votingapp.Model;
 
 import Util.DBconnection;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,12 +15,12 @@ public class User {
     private String last_name;
     private String email;
     private String password;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private boolean isAdmin;
     private String question;
     private String reponse;
 
-    public User(String cin, String first_name, String last_name, String email, String password, Date dateOfBirth, boolean isAdmin, String question, String reponse) {
+    public User(String cin, String first_name, String last_name, String email, String password, LocalDate dateOfBirth, boolean isAdmin, String question, String reponse) {
         this.cin = cin;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -28,6 +30,10 @@ public class User {
         this.isAdmin = isAdmin;
         this.question = question;
         this.reponse = reponse;
+    }
+
+    public User() {
+
     }
 
 
@@ -71,11 +77,11 @@ public class User {
         this.password = password;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -149,7 +155,7 @@ public class User {
                     String firstName = resultSet.getString("first_name");
                     String lastName = resultSet.getString("last_name");
                     String email = resultSet.getString("email");
-                    Date dateOfBirth = resultSet.getDate("date_of_birth");
+                    Date dateOfBirth = (localdate)resultSet.getDate("date_of_birth");
                     boolean isAdmin = resultSet.getBoolean("isAdmin");
                     String quest = resultSet.getString("question");
                     String reponse = resultSet.getString("answer");
@@ -162,4 +168,70 @@ public class User {
         }
         return null;
     }
+    public static boolean deleteUser(String cin) throws SQLException {
+        DBconnection DBconnection = new DBconnection();
+        try {
+            DBconnection.openConnection();
+            String query = "DELETE FROM users WHERE CIN = ?";
+            int rowsAffected = DBconnection.executeUpdate(query, cin);
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            DBconnection.closeConnection();
+        }
+    }
+
+    public static boolean updateUser(User user) throws SQLException {
+        DBconnection DBconnection = new DBconnection();
+        try {
+            DBconnection.openConnection();
+            String query = "UPDATE users SET last_name = ?, first_name = ?, email = ?, " +
+                    "date_of_birth = ?, isAdmin = ?, question = ?, answer = ? WHERE CIN = ?";
+            int rowsAffected = DBconnection.executeUpdate(query,
+                    user.getLast_name(),
+                    user.getFirst_name(),
+                    user.getEmail(),
+                    java.sql.Date.valueOf(user.getDateOfBirth()),
+                    user.isAdmin(),
+                    user.getCin());
+            return rowsAffected > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            DBconnection.closeConnection();
+        }
+    }
+
+
+    public static ObservableList<User> getAllUsers() throws SQLException {
+        ObservableList<User> usersList = FXCollections.observableArrayList();
+        DBconnection DBconnection = new DBconnection();
+        try {
+            DBconnection.openConnection();
+            String query = "SELECT * FROM users";
+            ResultSet resultSet = DBconnection.executeQuery(query);
+
+            while (resultSet.next()) {
+                String cin = resultSet.getString("CIN");
+                String password = resultSet.getString("password");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String email = resultSet.getString("email");
+                LocalDate dateOfBirth = resultSet.getDate("date_of_birth").toLocalDate();
+                boolean isAdmin = resultSet.getBoolean("isAdmin");
+
+                User user = new User(cin, firstName, lastName, email, password, dateOfBirth, isAdmin);
+                usersList.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DBconnection.closeConnection();
+        }
+        return usersList;
+    }
 }
+

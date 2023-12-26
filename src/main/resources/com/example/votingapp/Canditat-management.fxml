@@ -18,7 +18,7 @@
          <top>
             <AnchorPane prefHeight="40.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #090979;">
+                  <AnchorPane prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: #090979;">
                      <children>
                         <Label layoutX="44.0" layoutY="11.0" prefHeight="20.0" prefWidth="130.0" text="Système de Vote" textFill="WHITE">
                            <font>
@@ -27,7 +27,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label alignment="CENTER" layoutX="211.2" layoutY="11.0" minWidth="160.0" prefHeight="26.0" prefWidth="918.0" text="Gestion des Candidats" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="1.0">
+                  <Label alignment="CENTER" layoutX="218.4" layoutY="13.0" minWidth="160.0" prefHeight="26.0" prefWidth="842.0" text="Gestion des Candidats" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="70.0">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -36,7 +36,7 @@
             </AnchorPane>
          </top>
          <left>
-            <AnchorPane prefHeight="563.0" prefWidth="210.0" styleClass="nav_bar" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="560.0" prefWidth="217.0" styleClass="nav_bar" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
                <children>
                   <FontAwesomeIconView fill="WHITE" glyphName="USER" layoutX="71.0" layoutY="101.0" size="100" />
                   <Label fx:id="username_label" layoutX="54.0" layoutY="115.0" text="Adil Bendaoud" textFill="WHITE">
@@ -49,17 +49,17 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" smooth="false" styleClass="icon" text="" />
                      </graphic>
                   </Button>
-                  <Button layoutX="7.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button_active" stylesheets="@../../../Styles/election.css" text="Candidats">
+                  <Button layoutX="7.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button_active" stylesheets="@../../../Styles/election.css" text="Candidats">
                      <graphic>
                         <FontAwesomeIconView glyphName="USERS" size="18" styleClass="icon" text="" />
                      </graphic>
                   </Button>
-                  <Button layoutX="5.0" layoutY="333.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
+                  <Button layoutX="6.0" layoutY="324.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
                      <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" />
+                        <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" text="" />
                      </graphic>
                   </Button>
-                  <Button layoutX="5.0" layoutY="506.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0">
+                  <Button layoutX="7.0" layoutY="506.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="7.0">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="18" styleClass="icon" />
                      </graphic>
@@ -68,6 +68,10 @@
                   <Button layoutX="7.0" layoutY="173.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" wrappingWidth="20.885690689086914" />
+                     </graphic></Button>
+                  <Button layoutX="6.0" layoutY="372.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Profil">
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="18" styleClass="icon" text="" />
                      </graphic></Button>
                </children>
             </AnchorPane>
@@ -92,8 +96,8 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="202.0" promptText="Rechercher" AnchorPane.rightAnchor="10.200000000000017" />
-                        <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="170.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
+                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="225.0" promptText="Rechercher" AnchorPane.rightAnchor="10.0" />
+                        <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="201.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" />
                            </graphic>

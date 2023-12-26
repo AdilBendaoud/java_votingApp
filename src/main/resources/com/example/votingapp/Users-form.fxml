@@ -46,12 +46,6 @@
                </graphic>
             </Button>
             <TextField fx:id="CINInput" layoutX="124.0" layoutY="26.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="addBtn" layoutX="86.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="38.0" prefWidth="139.0" stylesheets="@../../../Styles/election.css" text="Ajouter" visible="false">
-               <styleClass>
-                  <String fx:value="action-button" />
-                  <String fx:value="add-button" />
-               </styleClass>
-            </Button>
             <Label alignment="CENTER" layoutX="7.0" layoutY="74.0" prefHeight="30.0" prefWidth="118.0" text="Prénom">
                <font>
                   <Font size="14.0" />
@@ -70,8 +64,8 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <RadioButton fx:id="Yes_edit" layoutX="125.0" layoutY="297.0" mnemonicParsing="false" text="Yes" />
-            <RadioButton fx:id="non_edit" layoutX="193.0" layoutY="297.0" mnemonicParsing="false" text="Non" />
+            <RadioButton fx:id="Yes_ad" layoutX="125.0" layoutY="297.0" mnemonicParsing="false" text="Yes" />
+            <RadioButton fx:id="non_ad" layoutX="193.0" layoutY="297.0" mnemonicParsing="false" text="Non" />
          </children>
       </AnchorPane>
       <Label fx:id="title" alignment="CENTER" layoutY="11.0" prefHeight="26.0" prefWidth="350.0" text="Editer Utilisateur">
