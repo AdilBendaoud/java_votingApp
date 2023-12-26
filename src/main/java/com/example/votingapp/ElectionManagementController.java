@@ -45,7 +45,7 @@ public class ElectionManagementController {
     private TableColumn<Election, String> election_col_gagnant;
 
     @FXML
-    private Button electionAddButton;
+    private Button electionAddButton,goToResults;
 
     @FXML
     private TableColumn<Election, Integer> election_col_id;
@@ -156,6 +156,16 @@ public class ElectionManagementController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Canditat-management.fxml"));
         Parent root = loader.load();
         CandidatController candidatController = loader.getController();
+        candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
+        candidatController.setUser(user);
+        Stage stage = getStage(root);
+        stage.show();
+    }
+
+    public void goToResults() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("resultat-view.fxml"));
+        Parent root = loader.load();
+        ResultatController candidatController = loader.getController();
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);

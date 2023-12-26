@@ -116,6 +116,8 @@ public class Candidate {
     }
 
 
+
+
     public static boolean addCandidate(Candidate canditat) throws SQLException {
         DBconnection DBconnection = new DBconnection();
         try{
