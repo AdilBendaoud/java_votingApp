@@ -8,12 +8,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="449.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ParticipationController">
    <children>
       <Label fx:id="title" layoutX="217.0" layoutY="14.0" prefHeight="18.0" prefWidth="111.0" text="election test">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
       <AnchorPane layoutX="35.0" layoutY="44.0" prefHeight="386.0" prefWidth="500.0" stylesheets="@../../../Styles/election.css">
@@ -25,7 +24,7 @@
                   <String fx:value="edit-button" />
                </styleClass>
             </Button>
-            <ComboBox fx:id="candidatesComboBox" layoutX="14.0" layoutY="138.0" prefHeight="30.0" prefWidth="210.0" />
+            <ComboBox fx:id="candidatesComboBox" layoutX="14.0" layoutY="138.0" prefHeight="30.0" prefWidth="210.0" promptText="Choisir le Candidat" />
             <Button fx:id="addBtn" layoutX="39.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleAddBtn" prefHeight="30.0" prefWidth="159.0" stylesheets="@../../../Styles/election.css" text="Ajouter a l'election">
                <styleClass>
                   <String fx:value="action-button" />

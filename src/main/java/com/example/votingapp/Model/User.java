@@ -112,10 +112,10 @@ public class User {
         LocalDate today = LocalDate.now();
         try{
             DBconnection.openConnection();
-            String query = "INSERT INTO Users (CIN, last_name, first_name, email, password, date_of_birth, question, answer, isAdmin, creation_date)\n" +
-                    "VALUES (? , ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            String query = "INSERT INTO Users (CIN, last_name, first_name, email, password, date_of_birth, question, answer, isAdmin)\n" +
+                    "VALUES (?,?, ?, ?, ?, ?, ?, ?, ?);";
             int rowsAffected = DBconnection.executeUpdate(query, cin, last_name, first_name, email, password,
-                    java.sql.Date.valueOf(dateOfBirth), question, answer, isAdmin, java.sql.Date.valueOf(today));
+                    java.sql.Date.valueOf(dateOfBirth), question, answer, isAdmin);
             return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -139,25 +139,25 @@ public class User {
             DBconnection.closeConnection();
         }
     }
-    
+
     public static User getUserByCode(String code) throws SQLException {
         DBconnection DBconnection = new DBconnection();
         try{
             DBconnection.openConnection();
             String query = "SELECT * FROM users WHERE CIN = ?";
-                ResultSet resultSet = DBconnection.executeQuery(query, code);
-                if (resultSet.next()) {
-                    String cin = resultSet.getString("CIN");
-                    String password = resultSet.getString("password");
-                    String firstName = resultSet.getString("first_name");
-                    String lastName = resultSet.getString("last_name");
-                    String email = resultSet.getString("email");
-                    LocalDate dateOfBirth = resultSet.getDate("date_of_birth").toLocalDate();
-                    boolean isAdmin = resultSet.getBoolean("isAdmin");
-                    String quest = resultSet.getString("question");
-                    String reponse = resultSet.getString("answer");
-                    return new User(cin, firstName, lastName, email, password, dateOfBirth, isAdmin, quest, reponse);
-                }
+            ResultSet resultSet = DBconnection.executeQuery(query, code);
+            if (resultSet.next()) {
+                String cin = resultSet.getString("CIN");
+                String password = resultSet.getString("password");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String email = resultSet.getString("email");
+                LocalDate dateOfBirth = resultSet.getDate("date_of_birth").toLocalDate();
+                boolean isAdmin = resultSet.getBoolean("isAdmin");
+                String quest = resultSet.getString("question");
+                String reponse = resultSet.getString("answer");
+                return new User(cin, firstName, lastName, email, password, dateOfBirth, isAdmin, quest, reponse);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -185,7 +185,7 @@ public class User {
         try {
             DBconnection.openConnection();
             String query = "UPDATE users SET last_name = ?, first_name = ?, email = ?, " +
-                    "date_of_birth = ?, isAdmin = ?, question = ?, answer = ? WHERE CIN = ?";
+                    "date_of_birth = ?, isAdmin = ? WHERE CIN = ?";
             int rowsAffected = DBconnection.executeUpdate(query,
                     user.getLast_name(),
                     user.getFirst_name(),

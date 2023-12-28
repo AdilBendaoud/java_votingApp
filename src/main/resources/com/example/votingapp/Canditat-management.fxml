@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="600.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatController">
+<AnchorPane minHeight="550.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatController">
    <children>
       <BorderPane layoutX="79.0" layoutY="87.0" prefHeight="600.0" prefWidth="1130.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -27,9 +27,9 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label alignment="CENTER" layoutX="218.4" layoutY="13.0" minWidth="160.0" prefHeight="26.0" prefWidth="842.0" text="Gestion des Candidats" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="70.0">
+                  <Label alignment="CENTER" layoutX="218.4" layoutY="-1.0" minWidth="160.0" prefHeight="40.0" prefWidth="911.0" text="Gestion des Candidats" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="1.0">
                      <font>
-                        <Font name="System Bold" size="16.0" />
+                        <Font name="System Bold Italic" size="18.0" />
                      </font>
                   </Label>
                </children>
@@ -69,10 +69,6 @@
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" wrappingWidth="20.885690689086914" />
                      </graphic></Button>
-                  <Button layoutX="6.0" layoutY="372.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Profil">
-                     <graphic>
-                        <FontAwesomeIconView fill="WHITE" glyphName="COGS" size="18" styleClass="icon" text="" />
-                     </graphic></Button>
                </children>
             </AnchorPane>
          </left>
@@ -83,21 +79,21 @@
                      <children>
                         <TableView fx:id="candidatTable" layoutX="16.0" layoutY="55.0" prefHeight="467.0" prefWidth="872.0" AnchorPane.bottomAnchor="17.600000000000023" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="9.600000000000023" AnchorPane.topAnchor="55.0">
                            <columns>
+                              <TableColumn fx:id="candidat_col_photo" prefWidth="115.199951171875" text="Photo" />
                               <TableColumn fx:id="candidat_col_id" editable="false" prefWidth="66.39999008178711" text="ID" />
                               <TableColumn fx:id="candidat_col_prenom" editable="false" prefWidth="109.59999084472656" text="Prénom" />
                               <TableColumn fx:id="candidat_col_nom" editable="false" minWidth="20.0" prefWidth="108.00003051757812" text="Nom" />
                               <TableColumn fx:id="candidat_col_date_naiss" editable="false" minWidth="20.0" prefWidth="148.0" text="Date de Naissance" />
                               <TableColumn fx:id="candidat_col_genrer" editable="false" minWidth="20.0" prefWidth="83.199951171875" text="Genre" />
                               <TableColumn fx:id="candidat_col_pos" prefWidth="92.79998779296875" text="Position" />
-                              <TableColumn fx:id="candidat_col_photo" prefWidth="115.199951171875" text="Photo" />
                               <TableColumn fx:id="candidat_col_actions" editable="false" minWidth="50.0" prefWidth="164.0001220703125" sortable="false" text="Actions" />
                            </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="225.0" promptText="Rechercher" AnchorPane.rightAnchor="10.0" />
-                        <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="201.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
+                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="234.0" promptText="Rechercher" AnchorPane.rightAnchor="10.0" />
+                        <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="162.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" />
                            </graphic>

@@ -99,8 +99,8 @@ public class ElectionManagementController {
         election_col_gagnant.setCellValueFactory(new PropertyValueFactory<>("gagnant"));
         election_col_actions.setCellFactory(param -> new TableCell<>() {
             private final Button editButton = new Button("Editer");
-            private final Button deleteButton = new Button("Supprimer");
-            private final Button participationButton = new Button("Condidats");
+            private final Button deleteButton = new Button("Suppr");
+            private final Button participationButton = new Button("Candidats");
             private final HBox buttons = new HBox(editButton, deleteButton, participationButton);
             {
                 buttons.setSpacing(10);

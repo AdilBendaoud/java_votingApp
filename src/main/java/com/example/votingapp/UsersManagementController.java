@@ -41,6 +41,9 @@ public class UsersManagementController {
     private TableColumn<User, String> User_col_email;
 
     @FXML
+    private TableColumn<User, Boolean> User_col_Role;
+
+    @FXML
     private TableColumn<User, LocalDate> User_col_Datebirth;
 
     @FXML
@@ -69,11 +72,12 @@ public class UsersManagementController {
         User_col_nom.setCellValueFactory(new PropertyValueFactory<>("last_name"));
         User_col_prenom.setCellValueFactory(new PropertyValueFactory<>("first_name"));
         User_col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        // User_col_Role.setCellValueFactory(new PropertyValueFactory<>("isAdmin"));
         User_col_Datebirth.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
 
         User_col_actions.setCellFactory(param -> new TableCell<>() {
             private final Button editButton = new Button("Editer");
-            private final Button deleteButton = new Button("Supprimer");
+            private final Button deleteButton = new Button("Suppr");
             private final HBox buttons = new HBox(editButton, deleteButton);
             {
                 buttons.setSpacing(10);
