@@ -116,6 +116,21 @@ public class CandidatController {
         return listData;
     }
 
+    public void goToResults () throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("resultat-view.fxml"));
+        Parent root = loader.load();
+        ResultatController candidatController = loader.getController();
+        candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
+        candidatController.setUser(user);
+        Stage stage = getStage(root);
+        stage.show();
+    }
+    public void goToLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
+        Parent root = loader.load();
+        Stage stage = getStage(root);
+        stage.show();
+    }
     public void goToElection() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("election-management-view.fxml"));
         Parent root = loader.load();
@@ -147,7 +162,7 @@ public class CandidatController {
         stage.setX(centerX-400);
         stage.setY(centerY+20);
         stage.setScene(new Scene(root));
-        stage.setTitle("Page des elections");
+        stage.setTitle("Page des Candidats");
         return stage;
     }
 
@@ -187,7 +202,7 @@ public class CandidatController {
         });
         candidat_col_actions.setCellFactory(param -> new TableCell<>() {
             private final Button editButton = new Button("Editer");
-            private final Button deleteButton = new Button("Supprimer");
+            private final Button deleteButton = new Button("Suppr");
             private final HBox buttons = new HBox(editButton, deleteButton);
 
             {

@@ -54,12 +54,12 @@
                         <FontAwesomeIconView glyphName="USERS" size="18" styleClass="icon" text="" />
                      </graphic>
                   </Button>
-                  <Button layoutX="6.0" layoutY="324.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
+                  <Button layoutX="6.0" layoutY="324.0" mnemonicParsing="false" onAction="#goToResults" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Resultats">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon" text="" />
                      </graphic>
                   </Button>
-                  <Button layoutX="7.0" layoutY="506.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="7.0">
+                  <Button layoutX="7.0" layoutY="506.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="7.0">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="18" styleClass="icon" />
                      </graphic>

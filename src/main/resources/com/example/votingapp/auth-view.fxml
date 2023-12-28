@@ -64,7 +64,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="login_btn" layoutX="89.0" layoutY="386.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="42.0" prefWidth="198.0" styleClass="btn" stylesheets="@../../../Styles/style.css" text="Connextion">
+            <Button fx:id="login_btn" layoutX="89.0" layoutY="386.0" mnemonicParsing="false" onMouseClicked="#login" prefHeight="42.0" prefWidth="198.0" styleClass="btn" stylesheets="@../../../Styles/style.css" text="Connexion">
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
                      <stops>

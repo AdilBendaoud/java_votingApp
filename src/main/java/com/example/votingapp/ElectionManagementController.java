@@ -59,6 +59,8 @@ public class ElectionManagementController {
     @FXML
     private Label username_label;
 
+    public ElectionManagementController() {
+    }
     public void setUser(User user){this.user = user;}
     public User getUser(){return user;}
     public void initData(String username) {username_label.setText(username);}
@@ -162,12 +164,29 @@ public class ElectionManagementController {
         stage.show();
     }
 
+    public void goToUser() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Gestion-Users.fxml"));
+        Parent root = loader.load();
+        UsersManagementController mainController = loader.getController();
+        mainController.initData(user.getFirst_name() + " " + user.getLast_name());
+        mainController.setUser(user);
+        Stage stage = getStage(root);
+        stage.show();
+    }
+
     public void goToResults() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("resultat-view.fxml"));
         Parent root = loader.load();
         ResultatController candidatController = loader.getController();
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
+        Stage stage = getStage(root);
+        stage.show();
+    }
+
+    public void goToLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
+        Parent root = loader.load();
         Stage stage = getStage(root);
         stage.show();
     }
@@ -183,7 +202,7 @@ public class ElectionManagementController {
         stage.setX(centerX-400);
         stage.setY(centerY+20);
         stage.setScene(new Scene(root));
-        stage.setTitle("Page des elections");
+        stage.setTitle("Page des Elections");
         return stage;
     }
 

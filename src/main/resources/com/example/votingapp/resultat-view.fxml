@@ -49,12 +49,12 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Button layoutX="5.0" layoutY="231.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Elections">
+                        <Button layoutX="5.0" layoutY="231.0" mnemonicParsing="false" onAction="#goToElection" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Elections">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="ENVELOPE_OPEN" size="18" styleClass="icon" text="" />
                            </graphic>
                         </Button>
-                        <Button layoutX="7.0" layoutY="177.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
+                        <Button layoutX="7.0" layoutY="177.0" mnemonicParsing="false" onAction="#goToUser" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" />
                            </graphic>
@@ -64,13 +64,13 @@
                               <FontAwesomeIconView fill="WHITE" glyphName="LINE_CHART" size="18" styleClass="icon_active" />
                            </graphic>
                         </Button>
-                        <Button layoutX="5.0" layoutY="506.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0">
+                        <Button layoutX="5.0" layoutY="506.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="5.0">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="18" styleClass="icon" />
                            </graphic>
                         </Button>
                         <Separator layoutX="6.0" layoutY="149.0" prefWidth="200.0" />
-                        <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
+                        <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" onAction="#goToCandidate" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Candidats">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" />
                            </graphic>
