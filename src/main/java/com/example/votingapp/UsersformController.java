@@ -10,65 +10,49 @@ import java.sql.SQLException;
 public class UsersformController {
 
     @FXML
-    private TextField cinInput;
+    private TextField CINInput;
 
     @FXML
-    private TextField lastNameInput;
+    private TextField nomInput;
 
     @FXML
-    private TextField firstNameInput;
+    private TextField prenomInput;
 
     @FXML
     private TextField emailInput;
 
     @FXML
-    private DatePicker dobPicker;
-
-    @FXML
-    private ComboBox<String> questionCombo;
-
-    @FXML
-    private TextField answerInput;
+    private DatePicker birthInput;
 
     @FXML
     private CheckBox adminCheckbox;
 
     private User user;
-    private Stage dialog;
+    private Stage dialogStage;
 
     public void setUser(User user) {
         this.user = user;
         if (user != null) {
-            cinInput.setText(user.getCin());
-            lastNameInput.setText(user.getLast_name());
-            firstNameInput.setText(user.getFirst_name());
+            CINInput.setText(user.getCin());
+            nomInput.setText(user.getLast_name());
+            prenomInput.setText(user.getFirst_name());
             emailInput.setText(user.getEmail());
-            dobPicker.setValue(user.getDateOfBirth());
+            birthInput.setValue(user.getDateOfBirth());
             adminCheckbox.setSelected(user.isAdmin());
         }
     }
-
-    public void setDialog(Dialog<ButtonType> dialog) {
-        this.dialog = dialog;
-    }
-
     @FXML
-    private void initialize() {
-        String[] questionList = {
-                "Quel est le nom de votre premier animal de compagnie ?",
-                "Dans quelle ville êtes-vous né(e) ?",
-                // ... (autres questions)
-        };
-
-        questionCombo.getItems().addAll(questionList);
+    private void handleCancel() {
+        dialogStage.close();
     }
+    public void setDialogStage(Stage dialogStage) {this.dialogStage=dialogStage;}
 
     @FXML
     private void handleSave() throws SQLException {
         if (validateUserData()) {
             updateUserData();
             if (User.updateUser(user)) {
-                dialog.close();
+                dialogStage.close();
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -80,25 +64,22 @@ public class UsersformController {
 
     public boolean validateUserData() {
         // Implement your validation logic here
-        return !cinInput.getText().isEmpty() &&
-                !lastNameInput.getText().isEmpty() &&
-                !firstNameInput.getText().isEmpty() &&
+        return !CINInput.getText().isEmpty() &&
+                !nomInput.getText().isEmpty() &&
+                !prenomInput.getText().isEmpty() &&
                 !emailInput.getText().isEmpty() &&
-                dobPicker.getValue() != null &&
-                questionCombo.getValue() != null &&
-                !answerInput.getText().isEmpty();
+                birthInput.getValue() != null;
     }
 
     public void updateUserData() {
         if (user == null) {
             user = new User();
         }
-
-        user.setCin(cinInput.getText());
-        user.setLast_name(lastNameInput.getText());
-        user.setFirst_name(firstNameInput.getText());
+        user.setCin(CINInput.getText());
+        user.setLast_name(nomInput.getText());
+        user.setFirst_name(prenomInput.getText());
         user.setEmail(emailInput.getText());
-        user.setDateOfBirth(dobPicker.getValue());
+        user.setDateOfBirth(birthInput.getValue());
         user.setAdmin(adminCheckbox.isSelected());
     }
 }

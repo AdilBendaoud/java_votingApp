@@ -32,10 +32,7 @@ public class User {
         this.reponse = reponse;
     }
 
-    public User() {
-
-    }
-
+    public User() {}
 
     public String getCin() {
         return cin;
@@ -155,7 +152,7 @@ public class User {
                     String firstName = resultSet.getString("first_name");
                     String lastName = resultSet.getString("last_name");
                     String email = resultSet.getString("email");
-                    Date dateOfBirth = (localdate)resultSet.getDate("date_of_birth");
+                    LocalDate dateOfBirth = resultSet.getDate("date_of_birth").toLocalDate();
                     boolean isAdmin = resultSet.getBoolean("isAdmin");
                     String quest = resultSet.getString("question");
                     String reponse = resultSet.getString("answer");
@@ -215,15 +212,14 @@ public class User {
             ResultSet resultSet = DBconnection.executeQuery(query);
 
             while (resultSet.next()) {
-                String cin = resultSet.getString("CIN");
-                String password = resultSet.getString("password");
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                String email = resultSet.getString("email");
-                LocalDate dateOfBirth = resultSet.getDate("date_of_birth").toLocalDate();
-                boolean isAdmin = resultSet.getBoolean("isAdmin");
-
-                User user = new User(cin, firstName, lastName, email, password, dateOfBirth, isAdmin);
+                User user = new User();
+                user.setCin(resultSet.getString("CIN"));
+                user.setPassword(resultSet.getString("password"));
+                user.setFirst_name(resultSet.getString("first_name"));
+                user.setLast_name(resultSet.getString("last_name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setDateOfBirth(resultSet.getDate("date_of_birth").toLocalDate());
+                user.setAdmin(resultSet.getBoolean("isAdmin"));
                 usersList.add(user);
             }
         } catch (SQLException e) {

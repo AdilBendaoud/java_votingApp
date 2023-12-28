@@ -126,6 +126,16 @@ public class CandidatController {
         stage.show();
     }
 
+    public void goToUser() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Gestion-Users.fxml"));
+        Parent root = loader.load();
+        UsersManagementController mainController = loader.getController();
+        mainController.initData(user.getFirst_name() + " " + user.getLast_name());
+        mainController.setUser(user);
+        Stage stage = getStage(root);
+        stage.show();
+    }
+
     private Stage getStage(Parent root) {
         Stage stage = (Stage) candidatAddButton.getScene().getWindow();
         Screen screen = Screen.getPrimary();
@@ -216,7 +226,6 @@ public class CandidatController {
                 }
             }
         });
-
         candidatTable.setItems(candidates);
     }
 

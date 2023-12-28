@@ -151,7 +151,7 @@ public class AuthController implements Initializable {
                 }else{
                     LocalDate selectedDate = signup_DOB.getValue();
                     boolean userCreated = User.newUser(signup_CIN.getText(), signup_lastName.getText(), signup_firstName.getText(), signup_email.getText(),
-                            signup_password.getText(), selectedDate, (String) signup_question.getSelectionModel().getSelectedItem(),
+                            signup_password.getText(), selectedDate, signup_question.getSelectionModel().getSelectedItem(),
                             signup_answer.getText(), false);
                     if(userCreated){
                         registerClearFields();

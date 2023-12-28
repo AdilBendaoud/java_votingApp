@@ -65,7 +65,7 @@
                      </graphic>
                   </Button>
                   <Separator layoutX="6.0" layoutY="149.0" prefWidth="200.0" />
-                  <Button layoutX="7.0" layoutY="173.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
+                  <Button layoutX="7.0" layoutY="173.0" mnemonicParsing="false" onAction="#goToUser" prefHeight="40.0" prefWidth="200.0" styleClass="nav_button" stylesheets="@../../../Styles/election.css" text="Utilisateurs">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="18" styleClass="icon" text="" wrappingWidth="20.885690689086914" />
                      </graphic></Button>

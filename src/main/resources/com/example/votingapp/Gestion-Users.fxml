@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.UsersManagementController">
    <children>
-      <AnchorPane minHeight="600.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane minHeight="600.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <BorderPane layoutX="79.0" layoutY="87.0" prefHeight="600.0" prefWidth="1130.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <top>
@@ -83,7 +83,7 @@
                <center>
                   <AnchorPane layoutX="211.4" layoutY="40.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="10.0" layoutY="13.0" prefHeight="540.0" prefWidth="897.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.399999999999977" AnchorPane.rightAnchor="12.399999999999977" AnchorPane.topAnchor="12.799999999999955">
+                        <AnchorPane layoutX="10.0" layoutY="13.0" prefHeight="540.0" prefWidth="897.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="7.2000000000000455" AnchorPane.leftAnchor="10.399999999999977" AnchorPane.rightAnchor="4.7999999999999545" AnchorPane.topAnchor="12.799999999999955">
                            <children>
                               <TableView fx:id="UserTable" layoutX="8.0" layoutY="55.0" prefHeight="467.0" prefWidth="873.0" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0">
                                  <columns>
