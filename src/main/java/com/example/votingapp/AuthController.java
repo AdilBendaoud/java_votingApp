@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -127,7 +128,7 @@ public class AuthController implements Initializable {
                 if (user != null && login_password.getText().equals(user.getPassword())) {
                     openMainScene();
                 } else {
-                    alertMessage.errorMessage("user or password wrong");
+                    alertMessage.errorMessage("compte n'existe pas !!");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -304,7 +305,12 @@ public class AuthController implements Initializable {
                 Stage stage = getStage(root);
                 stage.show();
             }else{
-                System.out.println("not admin");
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("User-Vote.fxml"));
+                Parent root = loader.load();
+                VoteContoller voteContoller = loader.getController();
+                voteContoller.setUser(user);
+                Stage stage = getStage(root);
+                stage.show();
             }
 
         } catch (Exception e) {

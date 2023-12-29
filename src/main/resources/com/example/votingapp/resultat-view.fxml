@@ -13,6 +13,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="1280.0" stylesheets="@../../../Styles/Chart.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ResultatController">
@@ -88,28 +90,40 @@
                               <String fx:value="white_bg" />
                            </styleClass>
                            <children>
-                              <ComboBox fx:id="comboBox" layoutX="30.0" layoutY="25.0" onAction="#handleComboBoxChanged" prefHeight="34.0" prefWidth="218.0" promptText="Selection d'election" />
-                              <PieChart fx:id="pieChart" layoutX="263.0" layoutY="61.0" prefHeight="420.0" prefWidth="420.0" visible="false" AnchorPane.bottomAnchor="59.0" />
-                              <BarChart fx:id="barChart" layoutX="666.0" layoutY="113.0" prefHeight="314.0" prefWidth="366.0" visible="false" AnchorPane.bottomAnchor="113.39999999999998" AnchorPane.topAnchor="113.0">
-                                <xAxis>
-                                  <CategoryAxis side="BOTTOM" />
-                                </xAxis>
-                                <yAxis>
-                                  <NumberAxis side="LEFT" />
-                                </yAxis>
-                              </BarChart>
-                              <ImageView fx:id="image" fitHeight="191.0" fitWidth="215.0" layoutX="65.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-                              <Label fx:id="labelWiner" layoutX="30.0" layoutY="389.0" text="gagnant c'est : Adil Bendaoud" visible="false">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Label>
                               <Label fx:id="statusLabel" layoutX="354.0" layoutY="246.0" text="Selectioner une election">
                                  <font>
                                     <Font size="32.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="rapportBtnPdf" layoutX="443.0" layoutY="455.0" mnemonicParsing="false" onAction="#handlePdfGenerateBtn" prefHeight="50.0" prefWidth="222.0" text="Generer un rapport" />
+                              <VBox alignment="CENTER" layoutX="10.0" layoutY="25.0" prefHeight="510.0" prefWidth="1026.0" AnchorPane.bottomAnchor="4.800000000000068" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.399999999999636" AnchorPane.topAnchor="25.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="407.0" prefWidth="1026.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="407.0" prefWidth="263.0">
+                                             <children>
+                                                <ImageView fx:id="image" fitHeight="171.0" fitWidth="215.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                                                <Label fx:id="labelWiner" prefHeight="234.0" prefWidth="215.0" text="gagnant c'est : Adil Bendaoud" visible="false">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <PieChart fx:id="pieChart" prefHeight="420.0" prefWidth="420.0" visible="false" />
+                                          <BarChart fx:id="barChart" prefHeight="407.0" prefWidth="306.0" visible="false">
+                                            <xAxis>
+                                              <CategoryAxis side="BOTTOM" />
+                                            </xAxis>
+                                            <yAxis>
+                                              <NumberAxis side="LEFT" />
+                                            </yAxis>
+                                          </BarChart>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="rapportBtnPdf" mnemonicParsing="false" onAction="#handlePdfGenerateBtn" prefHeight="50.0" prefWidth="222.0" text="Generer un rapport" />
+                                 </children>
+                              </VBox>
+                              <ComboBox fx:id="comboBox" layoutX="15.0" layoutY="16.0" onAction="#handleComboBoxChanged" prefHeight="34.0" prefWidth="218.0" promptText="Selection d'election" />
                            </children>
                         </AnchorPane>
                      </children>

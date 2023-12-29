@@ -4,7 +4,6 @@ import com.example.votingapp.Model.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.sql.SQLException;
 
 public class UsersformController {
