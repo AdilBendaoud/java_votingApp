@@ -260,8 +260,6 @@ public class AuthController implements Initializable {
     }
 
     public void switchForm(ActionEvent event) {
-
-        // THE REGISTRATION FORM WILL BE VISIBLE
         if (event.getSource() == signup_login || event.getSource() == resetpass_login) {
             signup_form.setVisible(false);
             login_form.setVisible(true);
