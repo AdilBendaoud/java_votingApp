@@ -64,7 +64,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <CheckBox fx:id="adminCheckbox" layoutX="132.0" layoutY="297.0" mnemonicParsing="false">
+            <CheckBox fx:id="adminCheckbox"  onAction="#handleToggleAdminRole" layoutX="132.0" layoutY="297.0" mnemonicParsing="false">
                <font>
                   <Font size="14.0" />
                </font>

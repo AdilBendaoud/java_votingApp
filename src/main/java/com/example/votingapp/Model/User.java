@@ -34,6 +34,7 @@ public class User {
 
     public User() {}
 
+
     public String getCin() {
         return cin;
     }
@@ -105,6 +106,9 @@ public class User {
     public void setReponse(String reponse) {
         this.reponse = reponse;
     }
+    public void setRole(String role) {
+        this.isAdmin = role.equals("Admin");
+    }
 
     public static boolean newUser(String cin, String last_name, String first_name, String email, String password,
                                   LocalDate dateOfBirth, String question, String answer, boolean isAdmin ) throws SQLException {
@@ -124,6 +128,7 @@ public class User {
             DBconnection.closeConnection();
         }
     }
+
 
     public boolean updatePassword(String newPassword) throws SQLException {
         DBconnection DBconnection = new DBconnection();
@@ -165,6 +170,31 @@ public class User {
         }
         return null;
     }
+    public static User getUserByEmail(String email) throws SQLException {
+        DBconnection connection = new DBconnection();
+        try {
+            connection.openConnection();
+            String query = "SELECT * FROM users WHERE email = ?";
+            ResultSet resultSet = connection.executeQuery(query, email);
+            if (resultSet.next()) {
+                String cin = resultSet.getString("CIN");
+                String password = resultSet.getString("password");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                LocalDate dateOfBirth = resultSet.getDate("date_of_birth").toLocalDate();
+                boolean isAdmin = resultSet.getBoolean("isAdmin");
+                String quest = resultSet.getString("question");
+                String reponse = resultSet.getString("answer");
+                return new User(cin, firstName, lastName, email, password, dateOfBirth, isAdmin, quest, reponse);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connection.closeConnection();
+        }
+        return null;
+    }
+
     public static boolean deleteUser(String cin) throws SQLException {
         DBconnection DBconnection = new DBconnection();
         try {
@@ -201,7 +231,9 @@ public class User {
             DBconnection.closeConnection();
         }
     }
-
+    public String getRoleAsString() {
+        return isAdmin ? "Admin" : "Electeur";
+    }
 
     public static ObservableList<User> getAllUsers() throws SQLException {
         ObservableList<User> usersList = FXCollections.observableArrayList();

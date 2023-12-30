@@ -1,6 +1,7 @@
 package com.example.votingapp;
 
 import com.example.votingapp.Model.User;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -44,7 +45,7 @@ public class UsersManagementController {
     private TableColumn<User, String> User_col_email;
 
     @FXML
-    private TableColumn<User, Boolean> User_col_Role;
+    private TableColumn<User, String> User_col_Role;
 
     @FXML
     private TableColumn<User, LocalDate> User_col_Datebirth;
@@ -75,7 +76,7 @@ public class UsersManagementController {
         User_col_nom.setCellValueFactory(new PropertyValueFactory<>("last_name"));
         User_col_prenom.setCellValueFactory(new PropertyValueFactory<>("first_name"));
         User_col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        // User_col_Role.setCellValueFactory(new PropertyValueFactory<>("isAdmin"));
+        User_col_Role.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getRoleAsString()));
         User_col_Datebirth.setCellValueFactory(new PropertyValueFactory<>("dateOfBirth"));
 
         User_col_actions.setCellFactory(param -> new TableCell<>() {
@@ -133,12 +134,14 @@ public class UsersManagementController {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Candidats");
         stage.show();
     }
     public void goToLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
         Parent root = loader.load();
         Stage stage = getStage(root);
+        stage.setTitle("Login");
         stage.show();
     }
     public void goToResults () throws IOException {
@@ -148,6 +151,7 @@ public class UsersManagementController {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Résultats");
         stage.show();
     }
 
@@ -158,23 +162,17 @@ public class UsersManagementController {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Elections");
         stage.show();
     }
 
     private Stage getStage(Parent root) {
         Stage stage = (Stage) username_label.getScene().getWindow();
-        Screen screen = Screen.getPrimary();
-
-        Rectangle2D bounds = screen.getVisualBounds();
-        double centerX = bounds.getMinX() + (bounds.getWidth() - stage.getWidth()) / 2.0;
-        double centerY = bounds.getMinY() + (bounds.getHeight() - stage.getHeight()) / 2.0;
-
-        stage.setX(centerX-400);
-        stage.setY(centerY+20);
+        stage.centerOnScreen();
         stage.setScene(new Scene(root));
-        stage.setTitle("Page des Utilisateurs");
         return stage;
     }
+
 
     private void showUserDialog(User user, Window primaryStage) {
         try {

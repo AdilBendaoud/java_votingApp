@@ -47,9 +47,20 @@ public class UsersformController {
     public void setDialogStage(Stage dialogStage) {this.dialogStage=dialogStage;}
 
     @FXML
+    private void handleToggleAdminRole() {
+        if (adminCheckbox.isSelected()) {
+            user.setRole("Admin");
+        } else {
+            user.setRole("Electeur");
+        }
+    }
+
+    @FXML
     private void handleSave() throws SQLException {
         if (validateUserData()) {
-            updateUserData();
+            updateUserData(); // Met à jour les autres informations de l'utilisateur
+            handleToggleAdminRole(); // Met à jour le rôle en fonction de la case à cocher
+
             if (User.updateUser(user)) {
                 dialogStage.close();
             }
@@ -60,6 +71,7 @@ public class UsersformController {
             alert.showAndWait();
         }
     }
+
 
     public boolean validateUserData() {
         // Implement your validation logic here

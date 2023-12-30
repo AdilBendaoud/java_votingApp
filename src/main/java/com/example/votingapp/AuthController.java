@@ -16,7 +16,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -128,7 +127,7 @@ public class AuthController implements Initializable {
                 if (user != null && login_password.getText().equals(user.getPassword())) {
                     openMainScene();
                 } else {
-                    alertMessage.errorMessage("compte n'existe pas !!");
+                    alertMessage.errorMessage("user or password wrong");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -140,31 +139,92 @@ public class AuthController implements Initializable {
     protected void register() throws SQLException {
         User user = null;
         alertMessage = new AlertMessage();
-        if(signup_firstName.getText().isEmpty() || signup_lastName.getText().isEmpty() || signup_answer.getText().isEmpty() ||
-        signup_question.getSelectionModel().getSelectedItem() == null || signup_email.getText().isEmpty() || signup_CIN.getText().isEmpty() ||
-        signup_password.getText().isEmpty() || signup_confirmPassword.getText().isEmpty() || signup_DOB.getValue() == null){
-            alertMessage.errorMessage("vous devez remplir tous les champs !!");
-        } else {
-            try{
-                user = User.getUserByCode(signup_CIN.getText());
-                if(user != null){
-                    alertMessage.errorMessage("le code CIN existe deja !");
-                }else{
-                    LocalDate selectedDate = signup_DOB.getValue();
-                    boolean userCreated = User.newUser(signup_CIN.getText(), signup_lastName.getText(), signup_firstName.getText(), signup_email.getText(),
-                            signup_password.getText(), selectedDate, signup_question.getSelectionModel().getSelectedItem(),
-                            signup_answer.getText(), false);
-                    if(userCreated){
-                        registerClearFields();
-                        signup_form.setVisible(false);
-                        login_form.setVisible(true);
-                    }
-                }
-            }catch (SQLException e){
-                e.printStackTrace();
+
+        // Vérification que tous les champs sont remplis
+        if (signup_firstName.getText().isEmpty() || signup_lastName.getText().isEmpty() ||
+                signup_answer.getText().isEmpty() || signup_question.getSelectionModel().getSelectedItem() == null ||
+                signup_email.getText().isEmpty() || signup_CIN.getText().isEmpty() ||
+                signup_password.getText().isEmpty() || signup_confirmPassword.getText().isEmpty() ||
+                signup_DOB.getValue() == null) {
+            alertMessage.errorMessage("Vous devez remplir tous les champs !");
+            return;
+        }
+
+        // Vérification de la longueur du CIN
+        if (signup_CIN.getText().length() < 5) {
+            alertMessage.errorMessage("Le CIN doit contenir au moins 5 caractères");
+            return;
+        }
+        // Vérification du format du CIN (deux lettres majuscules au début)
+        if (!signup_CIN.getText().matches("^[A-Z]{2}\\d+")) {
+            alertMessage.errorMessage("Format Incorect");
+            return;
+        }
+        // Vérification de l'unicité du CIN
+        try {
+            user = User.getUserByCode(signup_CIN.getText());
+            if (user != null) {
+                alertMessage.errorMessage("Le CIN existe déjà !");
+                return;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Vérification du format de l'email
+        String emailPattern = "[a-zA-Z0-9._%+-]+@gmail\\.com";
+        if (!signup_email.getText().matches(emailPattern)) {
+            alertMessage.errorMessage("Format d'email invalide. Veuillez utiliser une adresse Gmail.");
+            return;
+        }
+
+        // Vérification de l'unicité de l'email
+        try {
+            user = User.getUserByEmail(signup_email.getText());
+            if (user != null) {
+                alertMessage.errorMessage("Cette adresse Gmail existe déjà !");
+                return;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Vérification du mot de passe
+        String password = signup_password.getText();
+        if (password.length() < 8 || !password.matches(".*[A-Z].*") || !password.matches(".*[!@#$%^&*()-+=].*")) {
+            alertMessage.errorMessage("Le mot de passe doit contenir au moins 8 caractères, une majuscule et un caractère spécial.");
+            return;
+        }
+
+        // Vérification de la confirmation du mot de passe
+        if (!password.equals(signup_confirmPassword.getText())) {
+            alertMessage.errorMessage("Les mots de passe ne sont pas identiques.");
+            return;
+        }
+
+        // Ajoutez d'autres vérifications si nécessaire
+
+        // Création d'un nouvel utilisateur si toutes les vérifications passent
+        LocalDate selectedDate = signup_DOB.getValue();
+        boolean userCreated = User.newUser(signup_CIN.getText(), signup_lastName.getText(), signup_firstName.getText(),
+                signup_email.getText(), password, selectedDate,
+                signup_question.getSelectionModel().getSelectedItem(), signup_answer.getText(), false);
+
+        if (userCreated) {
+            // Afficher un message de succès
+            Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+            successAlert.setTitle("Succès");
+            successAlert.setHeaderText(null);
+            successAlert.setContentText("Votre compte a été créé avec succès!");
+            successAlert.showAndWait();
+
+            // Effacer les champs et revenir à l'écran de connexion
+            registerClearFields();
+            signup_form.setVisible(false);
+            login_form.setVisible(true);
         }
     }
+
 
     public void showPassword() {
         if (login_showPassword.isSelected()) {
@@ -212,24 +272,40 @@ public class AuthController implements Initializable {
 
     public void changePassword() throws SQLException {
         alertMessage = new AlertMessage();
-        if(resetpass_newPassword.getText().isEmpty() || resetpass_confirmPassword.getText().isEmpty()){
-            alertMessage.errorMessage("vous devez remplir tous les champs !!");
+
+        // Vérification des champs vides
+        if (resetpass_newPassword.getText().isEmpty() || resetpass_confirmPassword.getText().isEmpty()) {
+            alertMessage.errorMessage("Vous devez remplir tous les champs !!");
         } else if (!Objects.equals(resetpass_confirmPassword.getText(), resetpass_newPassword.getText())) {
-            alertMessage.errorMessage("les mots de passe saisie sont differents !!");
-        }else{
-            try{
-                if(tmpUser.updatePassword(resetpass_newPassword.getText())){
-                    tmpUser = null;
-                    changePass_form.setVisible(false);
-                    login_form.setVisible(true);
-                }else{
-                    alertMessage.errorMessage("Erreur dans la base de donnees");
+            alertMessage.errorMessage("Les mots de passe saisis sont différents !!");
+        } else {
+            // Validation du nouveau mot de passe
+            String newPassword = resetpass_newPassword.getText();
+            if (!validatePassword(newPassword)) {
+                // Si la validation échoue, afficher un message d'erreur
+                alertMessage.errorMessage("Le mot de passe doit contenir au moins 8 caractères, une majuscule et un caractère spécial.");
+            } else {
+                try {
+                    // Mise à jour du mot de passe dans la base de données
+                    if (tmpUser.updatePassword(newPassword)) {
+                        tmpUser = null;
+                        changePass_form.setVisible(false);
+                        login_form.setVisible(true);
+                    } else {
+                        alertMessage.errorMessage("Erreur dans la base de données");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
-            }catch (SQLException e){
-                e.printStackTrace();
             }
         }
     }
+
+    // Fonction de validation du mot de passe
+    private boolean validatePassword(String password) {
+        return password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*[!@#$%^&*()-+=].*");
+    }
+
 
     public void registerClearFields(){
        signup_CIN.setText("");
@@ -308,8 +384,7 @@ public class AuthController implements Initializable {
                 VoteContoller voteContoller = loader.getController();
                 voteContoller.setUser(user);
                 Stage stage = getStage(root);
-                stage.show();
-            }
+                stage.show();            }
 
         } catch (Exception e) {
             e.printStackTrace();

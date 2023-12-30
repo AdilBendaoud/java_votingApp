@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="350.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ElectionFormController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="350.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ElectionFormController">
    <children>
-      <AnchorPane layoutX="13.0" layoutY="52.0" minHeight="0.0" minWidth="0.0" prefHeight="310.0" prefWidth="324.0" stylesheets="@../../../Styles/election.css">
+      <AnchorPane layoutX="13.0" layoutY="52.0" minHeight="0.0" minWidth="0.0" prefHeight="379.0" prefWidth="324.0" stylesheets="@../../../Styles/election.css">
          <styleClass>
             <String fx:value="shadow" />
             <String fx:value="white_bg" />
@@ -35,12 +35,12 @@
             </Label>
             <DatePicker fx:id="endInput" layoutX="124.0" layoutY="176.0" prefHeight="30.0" prefWidth="180.0" />
             <DatePicker fx:id="startInput" layoutX="125.0" layoutY="116.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="saveBtn" layoutX="52.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #1ea076; -fx-text-fill: #FFF; -fx-cursor: hand;" text="Enregistrer" visible="false">
+            <Button fx:id="saveBtn" layoutX="13.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: #1ea076; -fx-text-fill: #FFF; -fx-cursor: hand;" text="Enregistrer" visible="false">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="18" />
                </graphic>
             </Button>
-            <Button fx:id="cancelBtn" layoutX="178.0" layoutY="316.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="37.0" prefWidth="100.0" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-cursor: hand;" text="Annuler" visible="false">
+            <Button fx:id="cancelBtn" layoutX="178.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="46.0" prefWidth="131.0" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-cursor: hand;" text="Annuler" visible="false">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
                </graphic>

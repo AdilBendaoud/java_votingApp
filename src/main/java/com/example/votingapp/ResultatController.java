@@ -204,12 +204,14 @@ public class ResultatController implements Initializable {
         mainController.initData(user.getFirst_name() + " " + user.getLast_name());
         mainController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Elections");
         stage.show();
     }
     public void goToLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
         Parent root = loader.load();
         Stage stage = getStage(root);
+        stage.setTitle("Login");
         stage.show();
     }
     public void goToCandidate() throws IOException {
@@ -219,6 +221,7 @@ public class ResultatController implements Initializable {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Candidats");
         stage.show();
     }
 
@@ -229,23 +232,17 @@ public class ResultatController implements Initializable {
         mainController.initData(user.getFirst_name() + " " + user.getLast_name());
         mainController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Utilisateurs");
         stage.show();
     }
 
     private Stage getStage(Parent root) {
         Stage stage = (Stage) username_label.getScene().getWindow();
-        Screen screen = Screen.getPrimary();
-
-        Rectangle2D bounds = screen.getVisualBounds();
-        double centerX = bounds.getMinX() + (bounds.getWidth() - stage.getWidth()) / 2.0;
-        double centerY = bounds.getMinY() + (bounds.getHeight() - stage.getHeight()) / 2.0;
-
-        stage.setX(centerX-400);
-        stage.setY(centerY+20);
+        stage.centerOnScreen();
         stage.setScene(new Scene(root));
-        stage.setTitle("Page des Résultats");
         return stage;
     }
+
     public  void handlePdfGenerateBtn(){
         try {
             FileChooser fileChooser = new FileChooser();

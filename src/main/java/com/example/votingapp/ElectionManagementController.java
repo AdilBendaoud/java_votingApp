@@ -1,24 +1,23 @@
 package com.example.votingapp;
 
-import com.example.votingapp.Model.Election;
-import com.example.votingapp.Model.User;
 import Util.AlertMessage;
 import Util.DBconnection;
+import com.example.votingapp.Model.Election;
+import com.example.votingapp.Model.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -45,7 +44,7 @@ public class ElectionManagementController {
     private TableColumn<Election, String> election_col_gagnant;
 
     @FXML
-    private Button electionAddButton,goToResults;
+    private Button electionAddButton;
 
     @FXML
     private TableColumn<Election, Integer> election_col_id;
@@ -161,6 +160,7 @@ public class ElectionManagementController {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Candidats");
         stage.show();
     }
 
@@ -171,6 +171,7 @@ public class ElectionManagementController {
         mainController.initData(user.getFirst_name() + " " + user.getLast_name());
         mainController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Utilisateurs");
         stage.show();
     }
 
@@ -181,6 +182,7 @@ public class ElectionManagementController {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Résultats");
         stage.show();
     }
 
@@ -188,23 +190,17 @@ public class ElectionManagementController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
         Parent root = loader.load();
         Stage stage = getStage(root);
+        stage.setTitle("Login");
         stage.show();
     }
 
     private Stage getStage(Parent root) {
         Stage stage = (Stage) electionAddButton.getScene().getWindow();
-        Screen screen = Screen.getPrimary();
-
-        Rectangle2D bounds = screen.getVisualBounds();
-        double centerX = bounds.getMinX() + (bounds.getWidth() - stage.getWidth()) / 2.0;
-        double centerY = bounds.getMinY() + (bounds.getHeight() - stage.getHeight()) / 2.0;
-
-        stage.setX(centerX-400);
-        stage.setY(centerY+20);
+        stage.centerOnScreen();
         stage.setScene(new Scene(root));
-        stage.setTitle("Page des Elections");
         return stage;
     }
+
 
     public void addElection(){
         showDialog(null, (Stage) electionTable.getScene().getWindow(), false);

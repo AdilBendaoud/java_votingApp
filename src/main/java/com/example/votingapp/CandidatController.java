@@ -123,12 +123,14 @@ public class CandidatController {
         candidatController.initData(user.getFirst_name() + " " + user.getLast_name());
         candidatController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Résultats");
         stage.show();
     }
     public void goToLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
         Parent root = loader.load();
         Stage stage = getStage(root);
+        stage.setTitle("Login");
         stage.show();
     }
     public void goToElection() throws IOException {
@@ -138,6 +140,7 @@ public class CandidatController {
         mainController.initData(user.getFirst_name() + " " + user.getLast_name());
         mainController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Elections");
         stage.show();
     }
 
@@ -148,23 +151,18 @@ public class CandidatController {
         mainController.initData(user.getFirst_name() + " " + user.getLast_name());
         mainController.setUser(user);
         Stage stage = getStage(root);
+        stage.setTitle("Page des Utilisateurs");
         stage.show();
     }
 
     private Stage getStage(Parent root) {
         Stage stage = (Stage) candidatAddButton.getScene().getWindow();
-        Screen screen = Screen.getPrimary();
-
-        Rectangle2D bounds = screen.getVisualBounds();
-        double centerX = bounds.getMinX() + (bounds.getWidth() - stage.getWidth()) / 2.0;
-        double centerY = bounds.getMinY() + (bounds.getHeight() - stage.getHeight()) / 2.0;
-
-        stage.setX(centerX-400);
-        stage.setY(centerY+20);
+        stage.centerOnScreen();
         stage.setScene(new Scene(root));
         stage.setTitle("Page des Candidats");
         return stage;
     }
+
 
     public void candidatTableDisplay(String word) throws SQLException {
         ObservableList<Candidate> candidates = getCandidatesData(word);
@@ -274,5 +272,6 @@ public class CandidatController {
     @FXML
     private void initialize() throws SQLException {
         candidatTableDisplay("");
+
     }
 }
