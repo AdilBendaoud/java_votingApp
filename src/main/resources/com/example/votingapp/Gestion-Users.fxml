@@ -8,11 +8,13 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.UsersManagementController">
+<AnchorPane prefHeight="350.0" prefWidth="600.0" styleClass="image3" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.UsersManagementController">
    <children>
       <AnchorPane minHeight="550.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -20,7 +22,7 @@
                <top>
                   <AnchorPane prefHeight="40.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: #090979;">
+                        <AnchorPane prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: darkblue;">
                            <children>
                               <Label layoutX="44.0" layoutY="11.0" prefHeight="20.0" prefWidth="130.0" text="Système de Vote" textFill="WHITE">
                                  <font>
@@ -28,11 +30,17 @@
                                  </font>
                               </Label>
                            </children>
+                           <effect>
+                              <InnerShadow height="1.0" radius="0.0" width="1.0" />
+                           </effect>
                         </AnchorPane>
                         <Label alignment="CENTER" layoutX="216.8" minWidth="160.0" prefHeight="40.0" prefWidth="914.0" text="Gestion des Utilisateurs" AnchorPane.leftAnchor="217.0" AnchorPane.rightAnchor="0.0">
                            <font>
-                              <Font name="System Bold Italic" size="18.0" />
+                              <Font name="System Bold Italic" size="25.0" />
                            </font>
+                           <effect>
+                              <DropShadow height="255.0" radius="127.0" width="255.0" />
+                           </effect>
                         </Label>
                      </children>
                   </AnchorPane>
@@ -78,9 +86,9 @@
                <center>
                   <AnchorPane layoutX="211.4" layoutY="40.0" minHeight="400.0" minWidth="913.0" prefHeight="534.0" prefWidth="914.0" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
                      <children>
-                        <AnchorPane layoutX="0.8" layoutY="0.8" prefHeight="505.0" prefWidth="905.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="13.0">
+                        <AnchorPane layoutX="9.0" layoutY="24.0" prefHeight="467.0" prefWidth="894.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="24.0">
                            <children>
-                              <TableView fx:id="UserTable" layoutX="6.4" layoutY="55.0" prefHeight="466.0" prefWidth="890.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0">
+                              <TableView fx:id="UserTable" layoutX="9.0" layoutY="56.0" prefHeight="402.0" prefWidth="874.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="56.0">
                                  <columns>
                                     <TableColumn fx:id="User_col_cin" editable="false" prefWidth="93.60000932216644" text="CIN" />
                                     <TableColumn fx:id="User_col_prenom" editable="false" prefWidth="93.5999755859375" text="Prénom" />
@@ -94,7 +102,7 @@
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
                               </TableView>
-                              <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="273.0" promptText="Rechercher" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="273.0" promptText="Rechercher" style="-fx-border-color: black; -fx-border-radius: 4;" AnchorPane.rightAnchor="10.0" />
                            </children>
                            <styleClass>
                               <String fx:value="shadow" />

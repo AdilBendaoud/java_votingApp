@@ -42,6 +42,10 @@
     -fx-font-family: Arial;
 }
 
+.image3{
+-fx-background-image: url('../Styles/Images/ds.jpg');
+    -fx-background-size: cover;
+}
 
 .textfield{
     -fx-border-color: black;

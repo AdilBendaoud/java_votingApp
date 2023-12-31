@@ -1,5 +1,5 @@
 .nav_bar{
-    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
+    -fx-background-color : linear-gradient(to bottom right, darkblue , #42A5F5);
 }
 
 .nav_button{
@@ -56,10 +56,10 @@
     -fx-alignment: CENTER;
     -fx-padding: 0;
     -fx-border-radius: 8px;
-    -fx-border-color : linear-gradient(to bottom right, #090979, #00d4ff);
+    -fx-border-color : black;
 }
 .table-view .column-header-background{
-    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
+    -fx-background-color : linear-gradient(to bottom right, darkblue , #42A5F5);
     -fx-background-insets: 0 0 0 0;
     -fx-background-radius: 8px 8px 0 0 ;
 }
@@ -73,15 +73,17 @@
 }
 
 .action-button {
-    -fx-background-color: #4CAF50; /* Green background color */
+    -fx-background-color: darkblue; /* Green background color */
     -fx-text-fill: white;         /* White text color */
-    -fx-font-size: 14px;          /* Font size */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;  /* Font size */
     -fx-padding: 5px 10px;         /* Padding */
     -fx-border-radius: 5px;        /* Border radius */
     -fx-cursor : hand;
 }
 .action-button:hover{
-    -fx-background-color: #2a622d;
+    -fx-background-color: #42A5F5;
+    -fx-text-fill: white;
 }
 
 /* Style for the edit button */
