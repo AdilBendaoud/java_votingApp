@@ -126,7 +126,6 @@ public class ResultatController implements Initializable {
 
             ObservableList<XYChart.Series<String, Integer>> barChartData = getElectionResultsBarChart();
             barChart.setData(barChartData);
-            barChart.setTitle("resultats d'election");
 
             ObservableList<PieChart.Data> pieChartData = getElectionResultsPieChart();
             pieChart.setData(pieChartData);
@@ -141,7 +140,7 @@ public class ResultatController implements Initializable {
                 image.setImage( new Image(winner.getCandidate().getImage()));
                 image.setVisible(true);
             }
-            labelWiner.setText("gagnant c'est : "+ winner.getCandidate().getPrenom()+" "+getWinner().getCandidate().getNom());
+            labelWiner.setText(winner.getCandidate().getPrenom() + " " + getWinner().getCandidate().getNom() + " remporte les élections.");
 
             statusLabel.setVisible(false);
             barChart.setVisible(true);

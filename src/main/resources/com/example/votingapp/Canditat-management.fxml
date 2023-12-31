@@ -8,17 +8,19 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="550.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatController">
+<AnchorPane minHeight="550.0" minWidth="1130.0" prefHeight="200.0" prefWidth="200.0" styleClass="image3" stylesheets="@../../../Styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatController">
    <children>
       <BorderPane layoutX="79.0" layoutY="87.0" prefHeight="600.0" prefWidth="1130.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <AnchorPane prefHeight="40.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: #090979;">
+                  <AnchorPane prefHeight="40.0" prefWidth="217.0" style="-fx-background-color: darkblue;">
                      <children>
                         <Label layoutX="44.0" layoutY="11.0" prefHeight="20.0" prefWidth="130.0" text="Système de Vote" textFill="WHITE">
                            <font>
@@ -26,11 +28,17 @@
                            </font>
                         </Label>
                      </children>
+                     <effect>
+                        <InnerShadow height="1.0" radius="0.0" width="1.0" />
+                     </effect>
                   </AnchorPane>
                   <Label alignment="CENTER" layoutX="218.4" layoutY="-1.0" minWidth="160.0" prefHeight="40.0" prefWidth="911.0" text="Gestion des Candidats" AnchorPane.leftAnchor="218.0" AnchorPane.rightAnchor="1.0">
                      <font>
-                        <Font name="System Bold Italic" size="18.0" />
+                        <Font name="System Bold Italic" size="25.0" />
                      </font>
+                     <effect>
+                        <DropShadow height="255.0" radius="127.0" width="255.0" />
+                     </effect>
                   </Label>
                </children>
             </AnchorPane>
@@ -75,7 +83,7 @@
          <center>
             <AnchorPane layoutX="211.4" layoutY="40.0" prefHeight="200.0" prefWidth="200.0" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="10.0" layoutY="13.0" prefHeight="540.0" prefWidth="897.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="10.399999999999977" AnchorPane.rightAnchor="12.399999999999977" AnchorPane.topAnchor="12.799999999999955">
+                  <AnchorPane layoutX="18.0" layoutY="6.0" prefHeight="486.0" prefWidth="882.0" stylesheets="@../../../Styles/election.css" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="6.0">
                      <children>
                         <TableView fx:id="candidatTable" layoutX="16.0" layoutY="55.0" prefHeight="467.0" prefWidth="872.0" AnchorPane.bottomAnchor="17.600000000000023" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="9.600000000000023" AnchorPane.topAnchor="55.0">
                            <columns>
@@ -92,8 +100,8 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="234.0" promptText="Rechercher" AnchorPane.rightAnchor="10.0" />
-                        <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="162.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
+                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="234.0" promptText="Rechercher" style="-fx-border-radius: 4; -fx-border-color: black;" AnchorPane.rightAnchor="10.0" />
+                        <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="179.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" />
                            </graphic>
