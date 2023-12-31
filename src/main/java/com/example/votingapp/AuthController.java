@@ -117,17 +117,13 @@ public class AuthController implements Initializable {
         alertMessage = new AlertMessage();
         if(login_cin.getText().isEmpty() || login_password.getText().isEmpty()){
             alertMessage.errorMessage("vous devez remplir tous les champs !!");
-        } else if (login_cin.getText().length() < 5) {
-            alertMessage.errorMessage("CIN doit contenir au moin 5 caractère");
-        } else if (login_password.getText().length() < 8) {
-            alertMessage.errorMessage("Mot de passe doit contenir au moin 8 caractère");
-        }else {
+        } else {
             try {
                 user = User.getUserByCode(login_cin.getText());
                 if (user != null && login_password.getText().equals(user.getPassword())) {
                     openMainScene();
                 } else {
-                    alertMessage.errorMessage("user or password wrong");
+                    alertMessage.errorMessage("CIN ou Mot de Passe Incorrect");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

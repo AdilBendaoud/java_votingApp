@@ -34,11 +34,6 @@
                   <Font name="Elephant" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="login_passwordShowen" layoutX="528.0" layoutY="320.0" prefHeight="42.0" prefWidth="272.0" promptText="Mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
-            <PasswordField fx:id="login_password" layoutX="528.0" layoutY="320.0" prefHeight="42.0" prefWidth="272.0" promptText="Mot de passe" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: black;">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></PasswordField>
             <CheckBox fx:id="login_showPassword" layoutX="526.0" layoutY="380.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="20.0" prefWidth="145.0" text="Afficher Mot de passe" />
             <Label layoutX="528.0" layoutY="521.0" text="Vous n'avez pas de compte ? ">
                <font>
@@ -60,6 +55,7 @@
                   <Font name="Berlin Sans FB Demi Bold" size="35.0" />
                </font>
             </Label>
+            <TextField fx:id="login_passwordShowen" layoutX="528.0" layoutY="326.0" prefHeight="42.0" prefWidth="272.0" promptText="Mot de passe" styleClass="textfield" stylesheets="@../../../Styles/style.css" />
             <AnchorPane layoutY="-4.0" prefHeight="597.0" prefWidth="486.0" styleClass="image" stylesheets="@../../../Styles/style.css" />
             <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="602.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,6 +65,10 @@
                   <DropShadow radius="68.5" width="255.0" />
                </effect>
             </ImageView>
+            <PasswordField fx:id="login_password" layoutX="528.0" layoutY="326.0" prefHeight="42.0" prefWidth="272.0" promptText="Mot de passe" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: black;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></PasswordField>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="signup_form" layoutX="10.0" layoutY="10.0" prefHeight="576.0" prefWidth="370.0" styleClass="white-bg" stylesheets="@../../../Styles/style.css" visible="false">
