@@ -135,21 +135,6 @@ public class VoteContoller implements Initializable {
             connection.closeConnection();
         }
     }
-
-    public void goToLogin() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
-        Parent root = loader.load();
-        Stage stage = getStage(root);
-        stage.setTitle("Login");
-        stage.show();
-    }
-
-    private Stage getStage(Parent root) {
-        Stage stage = (Stage) labelWiner.getScene().getWindow();
-        stage.centerOnScreen();
-        stage.setScene(new Scene(root));
-        return stage;
-    }
     public void setUser(User user) {this.user = user;}
 
     public void initComboBox() throws SQLException {
@@ -177,7 +162,20 @@ public class VoteContoller implements Initializable {
         }
         return listData;
     }
+    public void goToLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
+        Parent root = loader.load();
+        Stage stage = getStage(root);
+        stage.setTitle("Login");
+        stage.show();
+    }
 
+    private Stage getStage(Parent root) {
+        Stage stage = (Stage) labelWiner.getScene().getWindow();
+        stage.centerOnScreen();
+        stage.setScene(new Scene(root));
+        return stage;
+    }
     private CandidateWrapper getWinner() {
         CandidateWrapper tmp = new CandidateWrapper();
         for(CandidateWrapper cw : electionResults){

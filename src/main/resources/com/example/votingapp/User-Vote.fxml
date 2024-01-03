@@ -21,23 +21,20 @@
    <children>
       <BorderPane layoutX="79.0" layoutY="87.0" prefHeight="600.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <AnchorPane prefHeight="26.0" prefWidth="800.0" styleClass="image2" stylesheets="@../../../Styles/style.css" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label alignment="CENTER" minWidth="160.0" prefHeight="54.0" prefWidth="902.0" text="Votez Maintenant" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <Label alignment="CENTER" minWidth="160.0" prefHeight="52.0" prefWidth="902.0" styleClass="image2" stylesheets="@../../../Styles/style.css" text="Votez Maintenant !" textFill="#fffafa" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
-                        <Font name="System Bold Italic" size="18.0" />
+                        <Font name="Georgia" size="29.0" />
                      </font>
-                     <effect>
-                        <DropShadow height="1.0" radius="0.0" width="1.0" />
-                     </effect>
                   </Label>
                </children>
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane layoutX="211.4" layoutY="40.0" prefHeight="550.0" prefWidth="877.0" styleClass="image3" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
+            <AnchorPane layoutX="211.4" layoutY="40.0" prefHeight="476.0" prefWidth="902.0" styleClass="image3" stylesheets="@../../../Styles/election.css" BorderPane.alignment="CENTER">
                <children>
-                  <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="16.0" onAction="#handleComboBoxChange" prefHeight="30.0" prefWidth="186.0" promptText="Choisir une élection" />
+                  <ComboBox fx:id="comboBox" layoutX="14.0" layoutY="17.0" onAction="#handleComboBoxChange" prefHeight="30.0" prefWidth="185.0" promptText="Choisir une élection" />
                   <Button layoutX="788.0" layoutY="14.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="34.0" prefWidth="145.0" styleClass="annul-button" stylesheets="@../../../Styles/election.css" text="Déconnexion" AnchorPane.rightAnchor="6.0">
                      <graphic>
                         <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="18" />
@@ -47,11 +44,11 @@
                      </effect>
                   </Button>
                   <Separator layoutY="-6.0" prefHeight="14.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <StackPane layoutX="13.0" layoutY="66.4" prefHeight="398.0" prefWidth="874.0" styleClass="radius" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="66.0">
+                  <StackPane layoutX="13.0" layoutY="68.0" prefHeight="407.0" prefWidth="875.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="68.0">
                      <children>
-                        <AnchorPane fx:id="votePage" prefHeight="319.0" prefWidth="874.0" stylesheets="@../../../Styles/election.css" visible="false">
+                        <AnchorPane fx:id="votePage" prefHeight="321.0" prefWidth="542.0" stylesheets="@../../../Styles/election.css" visible="false">
                            <children>
-                              <TableView fx:id="candidatTable" layoutX="4.8" layoutY="12.0" prefHeight="390.0" prefWidth="865.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="12.0">
+                              <TableView fx:id="candidatTable" layoutX="4.8" layoutY="7.2" prefHeight="366.0" prefWidth="877.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="7.0">
                                  <columns>
                                     <TableColumn fx:id="candidat_col_photo" prefWidth="138.3999702334404" text="Photo" />
                                     <TableColumn fx:id="candidat_col_prenom" editable="false" prefWidth="123.99996948242188" text="Prénom" />
@@ -69,17 +66,16 @@
                               <String fx:value="shadow" />
                               <String fx:value="radius" />
                               <String fx:value="white_bg" />
-                              <String fx:value="image3" />
                            </styleClass>
                         </AnchorPane>
-                        <AnchorPane fx:id="gagnantPage" prefHeight="350.0" prefWidth="873.0">
+                        <AnchorPane fx:id="gagnantPage" prefHeight="398.0" prefWidth="874.0">
                            <children>
-                              <HBox alignment="CENTER" layoutX="1.0" layoutY="-1.0" prefHeight="233.0" prefWidth="872.0">
+                              <HBox alignment="CENTER" layoutY="1.0" prefHeight="361.0" prefWidth="874.0">
                                  <children>
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                        <children>
                                           <ImageView fx:id="image" fitHeight="163.0" fitWidth="311.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-                                          <Label fx:id="labelWiner" text="Gagnant c'est : Adil Bendaoud" visible="false">
+                                          <Label fx:id="labelWiner" text="Gagnant c'est : Adil Bendaoud">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
@@ -92,7 +88,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="erorPage" prefHeight="200.0" prefWidth="200.0" visible="false">
                            <children>
-                              <Label alignment="CENTER" layoutX="183.0" layoutY="107.0" prefHeight="74.0" prefWidth="506.0" text="Vous avez déjà voté dans cette élection">
+                              <Label alignment="CENTER" layoutX="183.0" layoutY="107.0" prefHeight="74.0" prefWidth="506.0" text="Vous avez deja vote dans cette election">
                                  <font>
                                     <Font size="24.0" />
                                  </font>

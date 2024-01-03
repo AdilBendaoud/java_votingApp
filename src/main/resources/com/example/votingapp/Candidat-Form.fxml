@@ -33,7 +33,7 @@
                </font>
             </Label>
             <DatePicker fx:id="Datenaiss_Cand" layoutX="133.0" layoutY="285.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="saveBtn" layoutX="14.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="39.0" prefWidth="139.0" styleClass="save-button" stylesheets="@../../../Styles/election.css" text="Enregistrer" visible="false">
+            <Button fx:id="saveBtn" layoutX="14.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="45.0" prefWidth="139.0" styleClass="save-button" text="Enregistrer" visible="false">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="18" />
                </graphic>
@@ -41,7 +41,7 @@
                   <DropShadow />
                </effect>
             </Button>
-            <Button fx:id="cancelBtn" layoutX="167.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="39.0" prefWidth="139.0" styleClass="annul-button" stylesheets="@../../../Styles/election.css" text="Annuler" visible="false">
+            <Button fx:id="cancelBtn" layoutX="167.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="46.0" prefWidth="139.0" styleClass="annul-button" text="Annuler" visible="false">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
                </graphic>
@@ -50,13 +50,13 @@
                </effect>
             </Button>
             <TextField fx:id="nom_Cand" layoutX="133.0" layoutY="238.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="addBtn" layoutX="92.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="39.0" prefWidth="139.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter">
-               <effect>
-                  <DropShadow />
-               </effect>
+            <Button fx:id="addBtn" layoutX="92.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="46.0" prefWidth="139.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" text="" />
                </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <Label alignment="CENTER" layoutX="12.0" layoutY="200.0" prefHeight="18.0" prefWidth="122.0" text="Prénom">
                <font>

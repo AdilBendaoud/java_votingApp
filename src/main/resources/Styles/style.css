@@ -72,11 +72,6 @@
 
 }
 
-.text-field {
-    -fx-background-radius: 50px;
-
-}
-
 .date-picker > .arrow-button {
     -fx-background-radius: 50px;
 }

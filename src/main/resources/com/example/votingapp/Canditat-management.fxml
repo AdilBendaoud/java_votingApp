@@ -100,7 +100,7 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="234.0" promptText=" Rechercher par Nom" style="-fx-border-radius: 40; -fx-border-color: black;" AnchorPane.rightAnchor="10.0" />
+                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="234.0" promptText=" Rechercher par Nom" AnchorPane.rightAnchor="10.0" />
                         <Button fx:id="candidatAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addCandidat" prefHeight="34.0" prefWidth="179.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter un Candidat">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" />

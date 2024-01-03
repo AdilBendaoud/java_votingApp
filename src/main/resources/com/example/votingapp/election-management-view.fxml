@@ -91,18 +91,18 @@
                      <children>
                         <TableView fx:id="electionTable" layoutX="12.0" layoutY="67.0" prefHeight="393.0" prefWidth="824.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="67.0">
                            <columns>
-                              <TableColumn fx:id="election_col_id" editable="false" prefWidth="88.80000686645508" text="ID" />
-                              <TableColumn fx:id="election_col_nom" editable="false" prefWidth="143.2000274658203" text="Nom" />
-                              <TableColumn fx:id="election_col_date_debut" editable="false" minWidth="20.0" prefWidth="171.20001220703125" text="Date Debut" />
-                              <TableColumn fx:id="election_col_date_fin" editable="false" minWidth="20.0" prefWidth="182.39990234375" text="Date Fin" />
-                              <TableColumn fx:id="election_col_gagnant" editable="false" minWidth="20.0" prefWidth="182.4000244140625" text="Gagnant" />
-                              <TableColumn fx:id="election_col_actions" editable="false" minWidth="50.0" prefWidth="260.800048828125" sortable="false" text="Actions" />
+                              <TableColumn fx:id="election_col_id" editable="false" prefWidth="53.5999755859375" text="ID" />
+                              <TableColumn fx:id="election_col_nom" editable="false" prefWidth="124.8000259399414" text="Nom" />
+                              <TableColumn fx:id="election_col_date_debut" editable="false" minWidth="20.0" prefWidth="144.79998779296875" text="Date Debut" />
+                              <TableColumn fx:id="election_col_date_fin" editable="false" minWidth="20.0" prefWidth="132.0" text="Date Fin" />
+                              <TableColumn fx:id="election_col_gagnant" editable="false" minWidth="20.0" prefWidth="110.39999389648438" text="Gagnant" />
+                              <TableColumn fx:id="election_col_actions" editable="false" minWidth="50.0" prefWidth="259.20001220703125" sortable="false" text="Actions" />
                            </columns>
                            <columnResizePolicy>
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="246.0" promptText="Rechercher" style="-fx-border-color: black; -fx-border-radius: 40;" AnchorPane.rightAnchor="10.0" />
+                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="246.0" promptText="Rechercher " AnchorPane.rightAnchor="10.0" />
                         <Button fx:id="electionAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addElection" prefHeight="34.0" prefWidth="190.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter une élection">
                            <graphic>
                               <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" text="" />
