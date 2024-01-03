@@ -1,5 +1,5 @@
 .nav_bar{
-    -fx-background-color : linear-gradient(to bottom right, darkblue , #42A5F5);
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
 }
 
 .nav_button{
@@ -56,10 +56,10 @@
     -fx-alignment: CENTER;
     -fx-padding: 0;
     -fx-border-radius: 8px;
-    -fx-border-color : black;
+    -fx-border-color : linear-gradient(to bottom right, #090979, #00d4ff);
 }
 .table-view .column-header-background{
-    -fx-background-color : linear-gradient(to bottom right, darkblue , #42A5F5);
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
     -fx-background-insets: 0 0 0 0;
     -fx-background-radius: 8px 8px 0 0 ;
 }
@@ -73,17 +73,15 @@
 }
 
 .action-button {
-    -fx-background-color: darkblue; /* Green background color */
+    -fx-background-color: #4CAF50; /* Green background color */
     -fx-text-fill: white;         /* White text color */
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;  /* Font size */
+    -fx-font-size: 14px;          /* Font size */
     -fx-padding: 5px 10px;         /* Padding */
     -fx-border-radius: 5px;        /* Border radius */
     -fx-cursor : hand;
 }
 .action-button:hover{
-    -fx-background-color: blue;
-    -fx-text-fill: white;
+    -fx-background-color: #2a622d;
 }
 
 /* Style for the edit button */
@@ -103,37 +101,6 @@
     -fx-background-color: #a72d25;
 }
 
-.save-button{
-    -fx-background-color:  #1ea076; /* Green background color */
-    -fx-text-fill: white;         /* White text color */
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;  /* Font size */
-    -fx-padding: 5px 10px;         /* Padding */
-    -fx-border-radius: 5px;        /* Border radius */
-    -fx-cursor : hand;
-}
-.save-button:hover{
-    -fx-background-color: green;
-    -fx-text-fill: white;
-
-}
-.annul-button{
-    -fx-background-color: red; /* Green background color */
-    -fx-text-fill: white;         /* White text color */
-    -fx-font-size: 14px;
-    -fx-font-weight: bold;  /* Font size */
-    -fx-padding: 5px 10px;         /* Padding */
-    -fx-border-radius: 5px;        /* Border radius */
-    -fx-cursor : hand;
-}
-
-
-.annul-button:hover{
-    -fx-background-color: #B21B1B;
-    -fx-text-fill: white;
-}
-
-.image3{
--fx-background-image: url('../Styles/Images/ds.jpg');
-    -fx-background-size: cover;
+.add-button{
+    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
 }
