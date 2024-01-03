@@ -5,54 +5,51 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ParticipationController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="449.0" prefWidth="461.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.ParticipationController">
    <children>
-      <Label fx:id="title" alignment="CENTER" prefHeight="46.0" prefWidth="500.0" text="election test">
+      <Label fx:id="title" alignment="CENTER" layoutX="1.0" prefHeight="39.0" prefWidth="461.0" style="-fx-font-family: Georgia; -fx-font-size: 20;" text="election test">
          <font>
-            <Font name="Elephant Italic" size="23.0" />
+            <Font name="Georgia" size="20.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="30.0" layoutY="46.0" prefHeight="386.0" prefWidth="439.0" stylesheets="@../../../Styles/election.css">
+      <AnchorPane layoutX="14.0" layoutY="39.0" prefHeight="386.0" prefWidth="439.0" stylesheets="@../../../Styles/election.css">
          <children>
-            <ListView fx:id="candidateListe" layoutX="243.0" layoutY="58.0" prefHeight="256.0" prefWidth="182.0" />
-            <Button fx:id="deleteBtn" layoutX="272.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleDeleteBtn" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: red;" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Supprimer">
+            <ListView fx:id="candidateListe" layoutX="247.0" layoutY="53.0" prefHeight="258.0" prefWidth="170.0">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </ListView>
+            <Button fx:id="deleteBtn" layoutX="271.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleDeleteBtn" prefHeight="30.0" prefWidth="123.0" style="-fx-background-color: red;" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Supprimer">
                <effect>
                   <DropShadow />
                </effect>
             </Button>
-            <ComboBox fx:id="candidatesComboBox" layoutX="19.0" layoutY="171.0" prefHeight="30.0" prefWidth="195.0" promptText="Choisir le Candidat" style="-fx-border-color: black; -fx-border-radius: 4;" />
-            <Button fx:id="addBtn" layoutX="37.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleAddBtn" prefHeight="30.0" prefWidth="159.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter à l'élection">
+            <ComboBox fx:id="candidatesComboBox" layoutX="13.0" layoutY="167.0" prefHeight="30.0" prefWidth="195.0" promptText="Choisir le Candidat" style="-fx-border-radius: 4;" />
+            <Button fx:id="addBtn" layoutX="31.0" layoutY="221.0" mnemonicParsing="false" onAction="#handleAddBtn" prefHeight="30.0" prefWidth="159.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter à l'élection">
                <effect>
                   <DropShadow />
                </effect>
             </Button>
-            <ImageView fitHeight="46.0" fitWidth="182.0" layoutX="243.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <DropShadow />
-               </effect>
-            </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="17.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="139.0" fitWidth="170.0" layoutX="26.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
                <effect>
                   <DropShadow />
                </effect>
                <image>
-                  <Image url="@../../../Styles/Images/i%20Vote%20Secure%20(10).png" />
+                  <Image url="@../../../Styles/Images/ds.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="243.0" layoutY="14.0" prefHeight="30.0" prefWidth="182.0" text="Liste des Candidats">
+            <TextField alignment="CENTER" layoutX="244.0" layoutY="14.0" prefHeight="39.0" prefWidth="177.0" style="-fx-background-color: transparent; -fx-font-family: Georgia; -fx-font-style: italic;" text="Liste des Candidats">
                <font>
-                  <Font name="Elephant Italic" size="18.0" />
+                  <Font name="Eras Medium ITC" size="14.0" />
                </font>
-               <effect>
-                  <DropShadow height="105.28" radius="89.57" width="255.0" />
-               </effect>
-            </Label>
+            </TextField>
          </children>
          <styleClass>
             <String fx:value="radius" />

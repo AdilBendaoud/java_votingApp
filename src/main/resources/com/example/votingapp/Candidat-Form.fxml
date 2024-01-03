@@ -8,11 +8,12 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="573.0" prefWidth="350.0" scaleShape="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatFormController">
+<AnchorPane prefHeight="549.0" prefWidth="350.0" scaleShape="false" styleClass="image3" stylesheets="@../../../Styles/election.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.votingapp.CandidatFormController">
    <children>
       <AnchorPane layoutX="13.0" layoutY="42.0" prefHeight="491.0" prefWidth="324.0" stylesheets="@../../../Styles/election.css">
          <styleClass>
@@ -32,22 +33,30 @@
                </font>
             </Label>
             <DatePicker fx:id="Datenaiss_Cand" layoutX="133.0" layoutY="285.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="saveBtn" layoutX="16.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="45.0" prefWidth="139.0" style="-fx-background-color: #1ea076; -fx-text-fill: #FFF; -fx-cursor: hand;" text="Enregistrer" visible="false">
+            <Button fx:id="saveBtn" layoutX="14.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleSave" prefHeight="39.0" prefWidth="139.0" styleClass="save-button" stylesheets="@../../../Styles/election.css" text="Enregistrer" visible="false">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="FLOPPY_ALT" size="18" />
                </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
-            <Button fx:id="cancelBtn" layoutX="172.0" layoutY="469.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="46.0" prefWidth="139.0" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-cursor: hand;" text="Annuler" visible="false">
+            <Button fx:id="cancelBtn" layoutX="167.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="39.0" prefWidth="139.0" styleClass="annul-button" stylesheets="@../../../Styles/election.css" text="Annuler" visible="false">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="TIMES" size="18" />
                </graphic>
+               <effect>
+                  <DropShadow />
+               </effect>
             </Button>
             <TextField fx:id="nom_Cand" layoutX="133.0" layoutY="238.0" prefHeight="30.0" prefWidth="180.0" />
-            <Button fx:id="addBtn" layoutX="92.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="46.0" prefWidth="139.0" stylesheets="@../../../Styles/election.css" text="Ajouter">
-               <styleClass>
-                  <String fx:value="action-button" />
-                  <String fx:value="add-button" />
-               </styleClass>
+            <Button fx:id="addBtn" layoutX="92.0" layoutY="422.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="39.0" prefWidth="139.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" text="" />
+               </graphic>
             </Button>
             <Label alignment="CENTER" layoutX="12.0" layoutY="200.0" prefHeight="18.0" prefWidth="122.0" text="Prénom">
                <font>

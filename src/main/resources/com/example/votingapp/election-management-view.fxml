@@ -102,10 +102,10 @@
                               <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                            </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="246.0" promptText="Rechercher" style="-fx-border-color: black; -fx-border-radius: 4;" AnchorPane.rightAnchor="10.0" />
+                        <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="246.0" promptText="Rechercher" style="-fx-border-color: black; -fx-border-radius: 40;" AnchorPane.rightAnchor="10.0" />
                         <Button fx:id="electionAddButton" layoutX="16.0" layoutY="12.0" mnemonicParsing="false" onAction="#addElection" prefHeight="34.0" prefWidth="190.0" styleClass="action-button" stylesheets="@../../../Styles/election.css" text="Ajouter une élection">
                            <graphic>
-                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" />
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="16" text="" />
                            </graphic>
                            <font>
                               <Font name="System Bold" size="14.0" />

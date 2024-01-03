@@ -25,15 +25,15 @@
    <children>
       <AnchorPane fx:id="login_form" prefHeight="620.0" prefWidth="500.0" styleClass="white-bg" stylesheets="@../../../Styles/style.css">
          <children>
-            <TextField fx:id="login_cin" layoutX="528.0" layoutY="257.0" prefHeight="42.0" prefWidth="272.0" promptText="CIN" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: black;" styleClass="textfield" stylesheets="@../../../Styles/style.css">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></TextField>
             <Label alignment="CENTER" layoutX="487.0" layoutY="192.0" prefHeight="20.0" prefWidth="370.0" text="Accéder à Votre Compte" textAlignment="CENTER">
                <font>
                   <Font name="Elephant" size="24.0" />
                </font>
             </Label>
+            <TextField fx:id="login_cin" layoutX="528.0" layoutY="257.0" prefHeight="42.0" prefWidth="272.0" promptText="CIN" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: black;" styleClass="textfield" stylesheets="@../../../Styles/style.css">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
             <CheckBox fx:id="login_showPassword" layoutX="526.0" layoutY="380.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="20.0" prefWidth="145.0" text="Afficher Mot de passe" />
             <Label layoutX="528.0" layoutY="521.0" text="Vous n'avez pas de compte ? ">
                <font>

@@ -6,14 +6,20 @@ import com.example.votingapp.Model.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -128,6 +134,21 @@ public class VoteContoller implements Initializable {
         }finally {
             connection.closeConnection();
         }
+    }
+
+    public void goToLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("auth-view.fxml"));
+        Parent root = loader.load();
+        Stage stage = getStage(root);
+        stage.setTitle("Login");
+        stage.show();
+    }
+
+    private Stage getStage(Parent root) {
+        Stage stage = (Stage) labelWiner.getScene().getWindow();
+        stage.centerOnScreen();
+        stage.setScene(new Scene(root));
+        return stage;
     }
     public void setUser(User user) {this.user = user;}
 

@@ -102,7 +102,7 @@
                                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                                  </columnResizePolicy>
                               </TableView>
-                              <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="273.0" promptText="Rechercher" style="-fx-border-color: black; -fx-border-radius: 4;" AnchorPane.rightAnchor="10.0" />
+                              <TextField fx:id="searchInput" layoutX="685.0" layoutY="11.0" onKeyReleased="#handleSearch" prefHeight="35.0" prefWidth="273.0" promptText="Rechercher" style="-fx-border-color: black; -fx-border-radius: 40;" AnchorPane.rightAnchor="10.0" />
                            </children>
                            <styleClass>
                               <String fx:value="shadow" />

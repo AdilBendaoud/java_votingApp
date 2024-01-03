@@ -82,7 +82,7 @@
     -fx-cursor : hand;
 }
 .action-button:hover{
-    -fx-background-color: #42A5F5;
+    -fx-background-color: blue;
     -fx-text-fill: white;
 }
 
@@ -103,6 +103,37 @@
     -fx-background-color: #a72d25;
 }
 
-.add-button{
-    -fx-background-color : linear-gradient(to bottom right, #090979, #00d4ff);
+.save-button{
+    -fx-background-color:  #1ea076; /* Green background color */
+    -fx-text-fill: white;         /* White text color */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;  /* Font size */
+    -fx-padding: 5px 10px;         /* Padding */
+    -fx-border-radius: 5px;        /* Border radius */
+    -fx-cursor : hand;
+}
+.save-button:hover{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+
+}
+.annul-button{
+    -fx-background-color: red; /* Green background color */
+    -fx-text-fill: white;         /* White text color */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;  /* Font size */
+    -fx-padding: 5px 10px;         /* Padding */
+    -fx-border-radius: 5px;        /* Border radius */
+    -fx-cursor : hand;
+}
+
+
+.annul-button:hover{
+    -fx-background-color: #B21B1B;
+    -fx-text-fill: white;
+}
+
+.image3{
+-fx-background-image: url('../Styles/Images/ds.jpg');
+    -fx-background-size: cover;
 }
